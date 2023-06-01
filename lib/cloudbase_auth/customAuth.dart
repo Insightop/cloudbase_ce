@@ -1,7 +1,7 @@
 /// orgin pub package: https://pub.dev/packages/cloudbase_auth
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-import 'package:cloudbase_null_safety/cloudbase_null_safety.dart';
+import 'package:cloudbase_ce/cloudbase_ce.dart';
 import 'baseAuth.dart';
 import 'interface.dart';
 

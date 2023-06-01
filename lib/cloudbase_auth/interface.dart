@@ -1,7 +1,7 @@
 /// orgin pub package: https://pub.dev/packages/cloudbase_auth
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-import 'package:cloudbase_null_safety/cloudbase_core/auth.dart';
+import 'package:cloudbase_ce/cloudbase_core/auth.dart';
 
 class CloudBaseAuthState {
   CloudBaseAuthType? authType;

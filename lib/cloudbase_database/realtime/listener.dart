@@ -1,7 +1,7 @@
 /// orgin pub package: https://pub.dev/packages/cloudbase_database
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/snapshot.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/snapshot.dart';
 
 class RealtimeListener {
   Function close;

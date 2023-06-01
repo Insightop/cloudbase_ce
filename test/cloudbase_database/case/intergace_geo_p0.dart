@@ -1,5 +1,5 @@
 
-import 'package:cloudbase_null_safety/cloudbase_database/geo.dart';
+import 'package:cloudbase_ce/cloudbase_database/geo.dart';
 
 var geo = Geo();
 

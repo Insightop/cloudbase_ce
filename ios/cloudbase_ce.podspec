@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint cloudbase_null_safety.podspec' to validate before publishing.
+# Run `pod lib lint cloudbase_ce.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'cloudbase_null_safety'
+  s.name             = 'cloudbase_ce'
   s.version          = '0.0.1'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
@@ -16,7 +16,15 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/CloudbaseAuthPlugin.h'
   s.dependency 'Flutter'
-  s.dependency 'WechatOpenSDK'
+
+  # Unofficial SDK
+  # s.dependency 'OpenWeChatSDK','~> 1.9.9'
+  # s.dependency 'WechatOpenSDK_Fuck',  '~> 1.9.2'
+
+  # Official SDK
+  s.dependency 'WechatOpenSDK-XCFramework'
+  # s.dependency 'WechatOpenSDK'
+  
   s.dependency 'Aspects'
   s.platform = :ios, '9.0'
   s.static_framework = true

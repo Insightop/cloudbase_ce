@@ -4,15 +4,15 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:cloudbase_null_safety/cloudbase_core/base.dart';
-import 'package:cloudbase_null_safety/cloudbase_core/exception.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/config/error_config.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/error.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/message.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/utils.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/virtual_websocket_client.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/ws_channel.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/ws_event.dart';
+import 'package:cloudbase_ce/cloudbase_core/base.dart';
+import 'package:cloudbase_ce/cloudbase_core/exception.dart';
+import 'package:cloudbase_ce/cloudbase_database/config/error_config.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/error.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/message.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/utils.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/virtual_websocket_client.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/ws_channel.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/ws_event.dart';
 
 class LoginInfo {
   bool loggedIn;

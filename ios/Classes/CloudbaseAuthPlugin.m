@@ -4,7 +4,7 @@
 @implementation CloudbaseAuthPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"cloudbase_null_safety"
+      methodChannelWithName:@"cloudbase_ce"
             binaryMessenger:[registrar messenger]];
   CloudbaseAuthPlugin* instance = [[CloudbaseAuthPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];

@@ -1,4 +1,4 @@
-package com.cloudbase.cloudbase_null_safety;
+package com.cloudbase.cloudbase_ce;
 
 import android.app.Activity;
 import android.app.Application;

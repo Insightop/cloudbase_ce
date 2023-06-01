@@ -1,13 +1,13 @@
 /// orgin pub package: https://pub.dev/packages/cloudbase_database
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-import 'package:cloudbase_null_safety/cloudbase_core/exception.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/geo/lineString.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/geo/multiLineString.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/geo/multiPoint.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/geo/multiPolygon.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/geo/point.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/geo/polygon.dart';
+import 'package:cloudbase_ce/cloudbase_core/exception.dart';
+import 'package:cloudbase_ce/cloudbase_database/geo/lineString.dart';
+import 'package:cloudbase_ce/cloudbase_database/geo/multiLineString.dart';
+import 'package:cloudbase_ce/cloudbase_database/geo/multiPoint.dart';
+import 'package:cloudbase_ce/cloudbase_database/geo/multiPolygon.dart';
+import 'package:cloudbase_ce/cloudbase_database/geo/point.dart';
+import 'package:cloudbase_ce/cloudbase_database/geo/polygon.dart';
 
 import './command/logic.dart';
 import './command/query.dart';

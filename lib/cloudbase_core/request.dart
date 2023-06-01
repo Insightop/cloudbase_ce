@@ -20,10 +20,12 @@ class CloudBaseRequest {
 
   /// CloudBaseRequest 初始化
   CloudBaseRequest(this._core) {
-    int? timeout = _core.config.timeout != null
-        ? _core.config.timeout
-        : _TCB_DEFAULT_TIMEOUT;
-
+    Duration timeout = _core.config.timeout != null
+        ? Duration(milliseconds: _core.config.timeout!)
+        : Duration(milliseconds: _TCB_DEFAULT_TIMEOUT);
+    // int? timeout = _core.config.timeout != null
+    //     ? _core.config.timeout
+    //     : _TCB_DEFAULT_TIMEOUT;
     _dio = Dio(BaseOptions(
         headers: {
           'Connection': 'Keep-Alive',

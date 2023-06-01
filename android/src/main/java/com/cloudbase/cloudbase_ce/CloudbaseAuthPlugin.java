@@ -1,4 +1,4 @@
-package com.cloudbase.cloudbase_null_safety;
+package com.cloudbase.cloudbase_ce;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -14,7 +14,7 @@ public class CloudbaseAuthPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    final MethodChannel channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "cloudbase_null_safety");
+    final MethodChannel channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "cloudbase_ce");
     channel.setMethodCallHandler(new CloudbaseAuthPlugin());
   }
 
@@ -28,7 +28,7 @@ public class CloudbaseAuthPlugin implements FlutterPlugin, MethodCallHandler {
   // depending on the user's project. onAttachedToEngine or registerWith must both be defined
   // in the same class.
   public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "cloudbase_null_safety");
+    final MethodChannel channel = new MethodChannel(registrar.messenger(), "cloudbase_ce");
     channel.setMethodCallHandler(new CloudbaseAuthPlugin());
   }
 

@@ -1,4 +1,4 @@
-group 'com.cloudbase.cloudbase_null_safety'
+group 'com.cloudbase.cloudbase_ce'
 version '1.0'
 
 buildscript {
@@ -11,13 +11,18 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.5.0'
     }
 }
-
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+allprojects {
+  repositories {
+    google()
+    mavenCentral ()
+  }
 }
+// rootProject.allprojects {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+// }
 
 apply plugin: 'com.android.library'
 
@@ -32,6 +37,6 @@ android {
         disable 'InvalidPackage'
     }
     dependencies {
-        api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+        api 'com.tencent.mm.opensdk:wechat-sdk-android:+'
     }
 }

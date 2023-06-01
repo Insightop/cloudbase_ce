@@ -3,7 +3,7 @@
 
 import 'dart:convert';
 
-import 'package:cloudbase_null_safety/cloudbase_null_safety.dart';
+import 'package:cloudbase_ce/cloudbase_ce.dart';
 
 class CloudBaseFunction {
   final String _action = 'functions.invokeFunction';

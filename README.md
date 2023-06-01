@@ -7,9 +7,9 @@
   </a>
 </p>
 
-# cloudbase_null_safety | 腾讯云 Flutter CloudBase
+# cloudbase_ce | 腾讯云 Flutter CloudBase
 
-[![Pub](https://img.shields.io/pub/v/cloudbase_null_safety)](https://pub.flutter-io.cn/packages/cloudbase_null_safety)
+[![Pub](https://img.shields.io/pub/v/cloudbase_ce)](https://pub.flutter-io.cn/packages/cloudbase_ce)
 
 ## 描述
 
@@ -17,8 +17,8 @@
 
 此版本为官方空安全版本的临时替代包，用于升级空安全使用，所有官方API不变，直接替换使用.
 
-[cloudbase_null_safety](https://pub.flutter-io.cn/packages/cloudbase_null_safet) 将以下包全部都集成在了当中（就图个省事~）
-<!-- [![Pub](https://shields.io/badge/pub-v1.1.2-ff69b4)](https://pub.flutter-io.cn/packages/cloudbase_null_safety) -->
+[cloudbase_ce](https://pub.flutter-io.cn/packages/cloudbase_null_safet) 将以下包全部都集成在了当中（就图个省事~）
+<!-- [![Pub](https://shields.io/badge/pub-v1.1.2-ff69b4)](https://pub.flutter-io.cn/packages/cloudbase_ce) -->
 
 ## 已迁移的包
 |Status|Package|
@@ -45,13 +45,13 @@
 
 ```yaml
 dependencies:
-  cloudbase_null_safety: 
+  cloudbase_ce: 
 ```
 
 ## 简单示例
 
 ```dart
-import 'package:cloudbase_null_safety/cloudbase_null_safety.dart';
+import 'package:cloudbase_ce/cloudbase_ce.dart';
 
 // 初始化 CloudBase
 CloudBaseCore core = CloudBaseCore.init({

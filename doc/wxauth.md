@@ -84,13 +84,13 @@ public class WXEntryActivity extends Activity {
 ```yaml
 dependencies:
   cloudbase_core: ^0.0.1
-  cloudbase_null_safety: ^0.0.1
+  cloudbase_ce: ^0.0.1
 ```
 
 [2] 通过 dart 代码调起微信登录：
 ```dart
 import 'package:cloudbase_core/cloudbase_core.dart';
-import 'package:cloudbase_null_safety/cloudbase_null_safety.dart';
+import 'package:cloudbase_ce/cloudbase_ce.dart';
 
 CloudBaseCore core = CloudBaseCore.init({
     // 填写你的云开发envId和微信开放平台Appid

@@ -1,11 +1,11 @@
 /// orgin pub package: https://pub.dev/packages/cloudbase_database
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-import 'package:cloudbase_null_safety/cloudbase_core/base.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/query.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/document.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/response.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/validater.dart';
+import 'package:cloudbase_ce/cloudbase_core/base.dart';
+import 'package:cloudbase_ce/cloudbase_database/query.dart';
+import 'package:cloudbase_ce/cloudbase_database/document.dart';
+import 'package:cloudbase_ce/cloudbase_database/response.dart';
+import 'package:cloudbase_ce/cloudbase_database/validater.dart';
 
 class Collection extends Query {
   Collection(

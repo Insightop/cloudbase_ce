@@ -1,13 +1,13 @@
 import 'dart:developer' as dev;
 
-import 'package:cloudbase_null_safety/cloudbase_database/collection.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/database.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/query.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/listener.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/realtime/snapshot.dart';
-import 'package:cloudbase_null_safety/cloudbase_database/response.dart';
-import 'package:cloudbase_null_safety/cloudbase_null_safety.dart';
-import 'package:cloudbase_null_safety/test_method_channel.dart';
+import 'package:cloudbase_ce/cloudbase_database/collection.dart';
+import 'package:cloudbase_ce/cloudbase_database/database.dart';
+import 'package:cloudbase_ce/cloudbase_database/query.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/listener.dart';
+import 'package:cloudbase_ce/cloudbase_database/realtime/snapshot.dart';
+import 'package:cloudbase_ce/cloudbase_database/response.dart';
+import 'package:cloudbase_ce/cloudbase_ce.dart';
+import 'package:cloudbase_ce/test_method_channel.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -120,7 +120,7 @@ class _MyAppState extends State<MyApp> {
         'version': '1' // 当行数据最前面的字段值
       }
     });
-    
+
     //core.setAuthInstance(TestAuth());
     CloudBaseAuth auth = CloudBaseAuth(core);
     CloudBaseAuthState? authState = await auth.getAuthState();

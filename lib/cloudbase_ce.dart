@@ -5,7 +5,7 @@
 /// orgin cloudbase_database pub package: https://pub.dev/packages/cloudbase_database
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-library cloudbase_null_safety;
+library cloudbase_ce;
 
 export 'cloudbase_core/lib.dart';
 
