@@ -6,7 +6,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
+import io.flutter.embedding.engine.plugins.FlutterPlugin.FlutterPluginBinding;
 import java.util.Map;
 
 /** CloudbaseAuthPlugin */
@@ -14,7 +14,7 @@ public class CloudbaseAuthPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    final MethodChannel channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "cloudbase_ce");
+    final MethodChannel channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "cloudbase_ce");
     channel.setMethodCallHandler(new CloudbaseAuthPlugin());
   }
 
@@ -27,10 +27,6 @@ public class CloudbaseAuthPlugin implements FlutterPlugin, MethodCallHandler {
   // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
   // depending on the user's project. onAttachedToEngine or registerWith must both be defined
   // in the same class.
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "cloudbase_ce");
-    channel.setMethodCallHandler(new CloudbaseAuthPlugin());
-  }
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
