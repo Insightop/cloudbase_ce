@@ -1,5 +1,5 @@
 name: cloudbase_ce
-description: Community edition Flutter plugin for cloudbase. Temporary alternative to the official null-safety version, all APIs are consistent with the official.
+description: Cloudbase SDK community edition. All APIs are consistent to the official with null-safety.
 version: 2.0.1
 homepage: https://github.com/bookshiyi/cloudbase_ce
 
