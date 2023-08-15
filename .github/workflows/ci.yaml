@@ -35,6 +35,7 @@ jobs:
       fail-fast: false # Important
       matrix:
         runner: [ubuntu-latest, windows-latest, macos-latest]
+        target: [android,ios]
         include:
           # Specify targets for each platform
           - runner: ubuntu-latest
@@ -103,14 +104,14 @@ jobs:
         working-directory: example/
         run: flutter pub get
 
-      - name: Build example Flutter app
+      - name: Build Android example
         if: matrix.target == 'android'
         working-directory: example/
         run: |
           flutter build apk
           flutter build appbundle
 
-      - name: Build example Flutter app
+      - name: Build iOS example
         if: matrix.target == 'ios'
         working-directory: example/
         run: flutter build ios --no-codesign
