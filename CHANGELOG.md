@@ -3,10 +3,14 @@
 - Update License
 - Untrack \*.lock files
 - Delete Flutter upper bound
+- Support for CI by Github Acitions
 
 ## 2.0.0
 
 - Publish as cloudbase_ce
+- Delete deprecated java api
+- Fix spell error
+- Update dependencies and environment
 
 ## 1.1.3
 
