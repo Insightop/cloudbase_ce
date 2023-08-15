@@ -16,7 +16,7 @@
 <!-- [![GitHub Stars](https://img.shields.io/github/stars/bookshiyi/cloudbase_ce?style=social)](https://github.com/bookshiyi/cloudbase_ce/stargazers) -->
 
 [![GitHub Stars](https://img.shields.io/github/stars/bookshiyi/cloudbase_ce)](https://github.com/bookshiyi/cloudbase_ce/stargazers)
-[![Build Test](https://img.shields.io/github/actions/workflow/status/bookshiyi/cloudbase_ce/ci.yaml)](https://github.com/bookshiyi/cloudbase_ce/actions/workflows/ci.yaml)
+[![build-test](https://github.com/bookshiyi/cloudbase_ce/actions/workflows/ci.yaml/badge.svg)](https://github.com/bookshiyi/cloudbase_ce/actions/workflows/ci.yaml)
 [![GitHub License](https://img.shields.io/github/license/bookshiyi/cloudbase_ce)](https://github.com/bookshiyi/cloudbase_ce/blob/main/LICENSE)
 
 ## 描述
