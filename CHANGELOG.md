@@ -1,3 +1,9 @@
+## 2.0.1
+
+- Update License
+- Untrack \*.lock files
+- Delete Flutter upper bound
+
 ## 2.0.0
 
 - Publish as cloudbase_ce
