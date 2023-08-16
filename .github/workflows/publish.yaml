@@ -13,10 +13,12 @@ on:
 jobs:
   publish:
     name: Publish
+    env:
+      PUBLISHER_TOKEN: ${{ secrets.PUB_DEV_TOKEN }} # Setting the environment variable from a secret
     environment: pub.dev # Specify the github actions deployment environment
     runs-on: ubuntu-latest
     permissions:
-      id-token: ${{ secrets.PUB_DEV_TOKEN }} # Required for authentication using OIDC
+      id-token: write # Required for authentication using OIDC
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -35,3 +37,5 @@ jobs:
 
       - name: Publish to pub.dev
         run: flutter pub publish --force
+        env:
+          PUBLISHER_TOKEN: ${{ env.PUBLISHER_TOKEN }}
