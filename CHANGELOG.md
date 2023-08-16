@@ -1,3 +1,8 @@
+## 2.0.2
+
+- Update README
+- Update CI
+
 ## 2.0.1
 
 - Update License

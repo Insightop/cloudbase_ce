@@ -1,6 +1,6 @@
 name: cloudbase_ce
 description: Cloudbase SDK community edition. All APIs are consistent to the official with null-safety.
-version: 2.0.1
+version: 2.0.2
 homepage: https://github.com/bookshiyi/cloudbase_ce
 
 environment:

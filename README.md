@@ -29,20 +29,21 @@
 
 ## 平台支持
 
-| Target \ Platform | Linux | macOS | Windows |
-| ----------------- | ----- | ----- | ------- |
-| Android           | ✅    | ✅    | ✅      |
-| iOS               | -     | ✅    | -       |
+| Platform | Android | iOS |
+| -------- | ------- | --- |
+| Linux    | ✅      | -   |
+| macOS    | ✅      | ✅  |
+| Windows  | ✅      | -   |
 
 ## 已迁移的包
 
-| Package            | Version                                                         | Status |
-| ------------------ | --------------------------------------------------------------- | ------ |
-| cloudbase_core     | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
-| cloudbase_auth     | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
-| cloudbase_storage  | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
-| cloudbase_function | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
-| cloudbase_database | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
+| Package            | Version                                                             | Status |
+| ------------------ | ------------------------------------------------------------------- | ------ |
+| cloudbase_core     | [![Pub version](https://img.shields.io/pub/v/cloudbase_core)]()     | ✅     |
+| cloudbase_auth     | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]()     | ✅     |
+| cloudbase_database | [![Pub version](https://img.shields.io/pub/v/cloudbase_database)]() | ✅     |
+| cloudbase_function | [![Pub version](https://img.shields.io/pub/v/cloudbase_function)]() | ✅     |
+| cloudbase_storage  | [![Pub version](https://img.shields.io/pub/v/cloudbase_storage)]()  | ✅     |
 
 ## 安装
 
