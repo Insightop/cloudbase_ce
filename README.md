@@ -7,7 +7,7 @@
   </a>
 </p>
 
-# cloudbase_ce | 腾讯云 Flutter CloudBase Community Edition
+# CloudBase Flutter SDK Community Edition
 
 [![Pub Version](https://img.shields.io/pub/v/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Popularity](https://img.shields.io/pub/popularity/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
@@ -72,4 +72,3 @@ CloudBaseCore core = CloudBaseCore.init({
 ## 贡献者
 
 [![GitHub contributors (via allcontributors.org)](https://contrib.rocks/image?repo=bookshiyi/cloudbase_ce)](https://github.com/bookshiyi/cloudbase_ce/graphs/contributors)
-
