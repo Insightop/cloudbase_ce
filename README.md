@@ -78,3 +78,8 @@ CloudBaseCore core = CloudBaseCore.init({
 ## 详细文档
 
 [云开发·初始化](https://docs.cloudbase.net/api-reference/flutter/initialization)
+
+## 贡献者
+
+[![GitHub contributors (via allcontributors.org)](https://contrib.rocks/image?repo=bookshiyi/cloudbase_ce)](https://github.com/bookshiyi/cloudbase_ce/graphs/contributors)
+
