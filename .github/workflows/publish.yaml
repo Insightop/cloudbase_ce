@@ -16,7 +16,7 @@ jobs:
     environment: pub.dev # Specify the github actions deployment environment
     runs-on: ubuntu-latest
     permissions:
-      id-token: write # Required for authentication using OIDC
+      id-token: ${{ secrets.PUB_DEV_TOKEN }} # Required for authentication using OIDC
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
