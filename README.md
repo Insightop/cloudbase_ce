@@ -36,23 +36,13 @@
 
 ## 已迁移的包
 
-| Status | Package                |
-| ------ | ---------------------- |
-| ✅     | **cloudbase_core**     |
-| ✅     | **cloudbase_auth**     |
-| ✅     | **cloudbase_storage**  |
-| ✅     | **cloudbase_function** |
-| ✅     | **cloudbase_database** |
-
-## 官方 Pub Package
-
-| PackageName            | Pub Url                                                     |
-| ---------------------- | ----------------------------------------------------------- |
-| **cloudbase_core**     | [![Pub](https://img.shields.io/pub/v/cloudbase_core)]()     |
-| **cloudbase_auth**     | [![Pub](https://img.shields.io/pub/v/cloudbase_auth)]()     |
-| **cloudbase_storage**  | [![Pub](https://img.shields.io/pub/v/cloudbase_storage)]()  |
-| **cloudbase_function** | [![Pub](https://img.shields.io/pub/v/cloudbase_function)]() |
-| **cloudbase_database** | [![Pub](https://img.shields.io/pub/v/cloudbase_database)]() |
+| Package            | Version                                                         | Status |
+| ------------------ | --------------------------------------------------------------- | ------ |
+| cloudbase_core     | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
+| cloudbase_auth     | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
+| cloudbase_storage  | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
+| cloudbase_function | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
+| cloudbase_database | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]() | ✅     |
 
 ## 安装
 
