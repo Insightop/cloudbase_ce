@@ -13,11 +13,11 @@
 [![Pub Popularity](https://img.shields.io/pub/popularity/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Points](https://img.shields.io/pub/points/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 
-<!-- [![GitHub Stars](https://img.shields.io/github/stars/bookshiyi/cloudbase_ce?style=social)](https://github.com/bookshiyi/cloudbase_ce/stargazers) -->
+<!-- [![GitHub Stars](https://img.shields.io/github/stars/insightoptech/cloudbase_ce?style=social)](https://github.com/insightoptech/cloudbase_ce/stargazers) -->
 
-[![GitHub Stars](https://img.shields.io/github/stars/bookshiyi/cloudbase_ce)](https://github.com/bookshiyi/cloudbase_ce/stargazers)
-[![build-test](https://github.com/bookshiyi/cloudbase_ce/actions/workflows/ci.yaml/badge.svg)](https://github.com/bookshiyi/cloudbase_ce/actions/workflows/ci.yaml)
-[![GitHub License](https://img.shields.io/github/license/bookshiyi/cloudbase_ce)](https://github.com/bookshiyi/cloudbase_ce/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/stargazers)
+[![build-test](https://github.com/insightoptech/cloudbase_ce/actions/workflows/ci.yaml/badge.svg)](https://github.com/insightoptech/cloudbase_ce/actions/workflows/ci.yaml)
+[![GitHub License](https://img.shields.io/github/license/insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/blob/main/LICENSE)
 
 ## 描述
 
@@ -37,13 +37,13 @@
 
 ## 已迁移的包
 
-| Package            | Version                                                             | Status |
-| ------------------ | ------------------------------------------------------------------- | ------ |
-| cloudbase_core     | [![Pub version](https://img.shields.io/pub/v/cloudbase_core)]()     | ✅     |
-| cloudbase_auth     | [![Pub version](https://img.shields.io/pub/v/cloudbase_auth)]()     | ✅     |
-| cloudbase_database | [![Pub version](https://img.shields.io/pub/v/cloudbase_database)]() | ✅     |
-| cloudbase_function | [![Pub version](https://img.shields.io/pub/v/cloudbase_function)]() | ✅     |
-| cloudbase_storage  | [![Pub version](https://img.shields.io/pub/v/cloudbase_storage)]()  | ✅     |
+| Package            | Version                                                          | Status |
+| ------------------ | ---------------------------------------------------------------- | ------ |
+| cloudbase_core     | ![Pub version](https://img.shields.io/pub/v/cloudbase_core)     | ✅     |
+| cloudbase_auth     | ![Pub version](https://img.shields.io/pub/v/cloudbase_auth)     | ✅     |
+| cloudbase_database | ![Pub version](https://img.shields.io/pub/v/cloudbase_database) | ✅     |
+| cloudbase_function | ![Pub version](https://img.shields.io/pub/v/cloudbase_function) | ✅     |
+| cloudbase_storage  | ![Pub version](https://img.shields.io/pub/v/cloudbase_storage)  | ✅     |
 
 ## 安装
 
@@ -72,4 +72,4 @@ CloudBaseCore core = CloudBaseCore.init({
 
 ## 贡献者
 
-[![GitHub contributors (via allcontributors.org)](https://contrib.rocks/image?repo=bookshiyi/cloudbase_ce)](https://github.com/bookshiyi/cloudbase_ce/graphs/contributors)
+[![GitHub contributors (via allcontributors.org)](https://contrib.rocks/image?repo=insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/graphs/contributors)
