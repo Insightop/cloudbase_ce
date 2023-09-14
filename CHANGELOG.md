@@ -1,3 +1,7 @@
+## 2.0.4
+
+- Update pubspec.yaml
+
 ## 2.0.3
 
 - Update README
