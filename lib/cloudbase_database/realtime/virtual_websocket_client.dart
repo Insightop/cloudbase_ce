@@ -148,7 +148,7 @@ class VirtualWebSocketClient {
   late GetWaitExpectedTimeoutLengthFunc _getWaitExpectedTimeoutLength;
   late WatchStartCallback _onWatchStart;
   late WatchCloseCallback _onWatchClose;
-  bool? _debug;
+  // bool? _debug;
 
   // own
   RealtimeListener? listener;
@@ -195,7 +195,7 @@ class VirtualWebSocketClient {
     this._getWaitExpectedTimeoutLength = getWaitExpectedTimeoutLength;
     this._onWatchStart = onWatchStart;
     this._onWatchClose = onWatchClose;
-    this._debug = debug;
+    // this._debug = debug;
 
     this._availableRetries = AvailableRetries(
       initWatch: DEFAULT_MAX_AUTO_RETRY_ON_ERROR,
@@ -351,9 +351,8 @@ class VirtualWebSocketClient {
       success = true;
     } finally {
       this._rebuildWatchPromise = null;
+      Console.log('[realtime] rebuildWatch ${success ? 'success' : 'fail'}');
     }
-
-    Console.log('[realtime] rebuildWatch ${success ? 'success' : 'fail'}');
   }
 
   void _internalRebuildWatch(

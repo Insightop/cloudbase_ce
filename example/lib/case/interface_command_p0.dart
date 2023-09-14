@@ -21,7 +21,7 @@
 
 */
 
-var cases_data = {
+var casesData = {
   'name': 'interface_command_p0集合',
   'cases': [
     {

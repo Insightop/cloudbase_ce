@@ -3,19 +3,15 @@ on:
   push:
     paths-ignore:
       - ".vscode/**"
+      - "**.md"
       - "doc/**"
-      - "example/README.md"
-      - "CHANGELOG.md"
       - "LICENSE"
-      - "README.md"
   pull_request:
     paths-ignore:
       - ".vscode/**"
+      - "**.md"
       - "doc/**"
-      - "example/README.md"
-      - "CHANGELOG.md"
       - "LICENSE"
-      - "README.md"
   workflow_dispatch:
 
 concurrency:
@@ -31,18 +27,18 @@ concurrency:
 jobs:
   build:
     name: ${{ matrix.runner }} / ${{ matrix.target }}
-    runs-on: ${{ matrix.runner }}
-    timeout-minutes: 60
+    runs-on: ${{ matrix.runner }}-latest
+    timeout-minutes: 30
     strategy:
       fail-fast: false # Important
       matrix:
-        runner: [ubuntu-latest, windows-latest, macos-latest]
+        runner: [ubuntu, windows, macos]
         target: [android, ios]
         exclude:
           # Specify which targets don't build
-          - runner: ubuntu-latest
+          - runner: ubuntu
             target: ios
-          - runner: windows-latest
+          - runner: windows
             target: ios
 
     steps:
@@ -51,32 +47,6 @@ jobs:
 
       - name: Checkout submodules
         run: git submodule update --init --recursive
-
-      # # Automaticallly setup cache (Doesn't work yet)
-      # - name: Setup Nix
-      #   if: matrix.runner == 'ubuntu-latest' || matrix.runner == 'macos-latest'
-      #   uses: DeterminateSystems/nix-installer-action@main
-
-      # - name: Setup Magic Nix Cache
-      #   if: matrix.runner == 'ubuntu-latest' ||  matrix.runner == 'macos-latest'
-      #   uses: DeterminateSystems/magic-nix-cache-action@main
-
-      # - name: Run Nix Flake Check
-      #   if: matrix.runner == 'ubuntu-latest' ||  matrix.runner == 'macos-latest'
-      #   run: nix flake check
-
-      # Manually setup cache
-      - name: Setup cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.pub-cache
-            ~/.gradle
-            ~/.android
-            /usr/local/lib/android/
-            ./example/build
-            /Users/runner/Library/Android/
-          key: manual-cache-${{ matrix.runner }}
 
       - name: Setup Flutter toolchain
         uses: subosito/flutter-action@v2

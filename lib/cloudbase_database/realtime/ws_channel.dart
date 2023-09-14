@@ -10,7 +10,7 @@ enum WS_READY_STATUS { CONNECTING, OPEN, CLOSING, CLOSED }
 class WSChannel {
   late String _wsUrl;
   WebSocket? _ws;
-  late WS_READY_STATUS _status;
+  // late WS_READY_STATUS _status;
 
   get readyState {
     if (_ws == null) {

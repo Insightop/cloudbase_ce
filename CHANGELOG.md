@@ -1,3 +1,9 @@
+## 2.0.3
+
+- Update README
+- Update CI
+- Improve pub points
+
 ## 2.0.2
 
 - Update README

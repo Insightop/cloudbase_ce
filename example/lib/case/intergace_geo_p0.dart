@@ -2,7 +2,7 @@ import 'package:cloudbase_ce/cloudbase_database/geo.dart';
 
 var geo = Geo();
 
-var cases_data = {
+var casesData = {
   'name': 'interface_geo_p0集合',
   'skip': false, //其中包含console用例，在本地跑先skip，否则注释掉或改为false
   'cases': [

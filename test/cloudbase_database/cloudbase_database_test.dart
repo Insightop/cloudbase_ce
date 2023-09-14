@@ -37,24 +37,24 @@ void main() async {
   }
   CloudBaseDatabase db = CloudBaseDatabase(core);
   /// collection p0用例
-  test(collection_p0.cases_data['name']!, () async {
-    List cases = collection_p0.cases_data['cases'] as List;
+  test(collection_p0.casesData['name']!, () async {
+    List cases = collection_p0.casesData['cases'] as List;
       for(var i = 0; i < cases.length; i++) {
         await runCases(db, cases[i]);
       }
   }, timeout: Timeout(Duration(minutes: 60)));
 
   /// command p0用例
-  test(command_p0.cases_data['name']!, () async {
-    List cases = command_p0.cases_data['cases'] as List;
+  test(command_p0.casesData['name']!, () async {
+    List cases = command_p0.casesData['cases'] as List;
     for(var i = 0; i < cases.length; i++) {
       await runCases(db, cases[i]);
     }
   }, timeout: Timeout(Duration(minutes: 60)));
 
   /// geo command p0用例
-  test(geo_p0.cases_data['name']!, () async {
-    List cases = geo_p0.cases_data['cases'] as List;
+  test(geo_p0.casesData['name']!, () async {
+    List cases = geo_p0.casesData['cases'] as List;
     for(var i = 0; i < cases.length; i++) {
       await runCases(db, cases[i]);
     }
@@ -75,7 +75,7 @@ void main() async {
   });
 
   /// 实时推送 p0用例
-  test(collection_p0.cases_data['name']!, () async {
+  test(collection_p0.casesData['name']!, () async {
     var collection = db.collection('tcb_hello_world');
     // 单doc测试
     RealtimeListener rl1 = collection.doc('f3db088f5e84cd1300409145374590ba').watch(onChange: (Snapshot snapshot) {

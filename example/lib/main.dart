@@ -136,26 +136,26 @@ class _MyAppState extends State<MyApp> {
     CloudBaseDatabase db = CloudBaseDatabase(core);
 
     /// collection p0用例
-    await test(collection_p0.cases_data['name']!, () async {
-      List cases = collection_p0.cases_data['cases'] as List;
+    await test(collection_p0.casesData['name']!, () async {
+      List cases = collection_p0.casesData['cases'] as List;
       for (var i = 0; i < cases.length; i++) {
-        await runCases(db, cases[i], collection_p0.cases_data['name']!);
+        await runCases(db, cases[i], collection_p0.casesData['name']!);
       }
     });
 
     /// command p0用例
-    await test(command_p0.cases_data['name']!, () async {
-      List cases = command_p0.cases_data['cases'] as List;
+    await test(command_p0.casesData['name']!, () async {
+      List cases = command_p0.casesData['cases'] as List;
       for (var i = 0; i < cases.length; i++) {
-        await runCases(db, cases[i], command_p0.cases_data['name']!);
+        await runCases(db, cases[i], command_p0.casesData['name']!);
       }
     });
 
     /// geo command p0用例
-    await test(geo_p0.cases_data['name']!, () async {
-      List cases = geo_p0.cases_data['cases'] as List;
+    await test(geo_p0.casesData['name']!, () async {
+      List cases = geo_p0.casesData['cases'] as List;
       for (var i = 0; i < cases.length; i++) {
-        await runCases(db, cases[i], geo_p0.cases_data['name']!);
+        await runCases(db, cases[i], geo_p0.casesData['name']!);
       }
     });
 
@@ -171,7 +171,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     /// 实时推送 p0用例
-    await test(collection_p0.cases_data['name']!, () async {
+    await test(collection_p0.casesData['name']!, () async {
       var collection = db.collection('tcb_hello_world');
       var data = {
         '_id': "f3db088f5e84cd1300409145374590bc", //指定ID

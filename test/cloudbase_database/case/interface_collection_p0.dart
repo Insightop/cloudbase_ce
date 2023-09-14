@@ -19,7 +19,7 @@
 
 */
 
-var cases_data = {
+var casesData = {
   'name': 'interface_collection_P0集合',
   'cases': [
     {
