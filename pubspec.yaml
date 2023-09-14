@@ -1,7 +1,7 @@
 name: cloudbase_ce
 description: Cloudbase SDK community edition. All APIs are consistent to the official with null-safety.
 version: 2.0.3
-homepage: https://github.com/insightop/cloudbase_ce
+homepage: https://github.com/insightoptech/cloudbase_ce
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
