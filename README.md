@@ -23,9 +23,11 @@
 
 [腾讯云·云开发](https://www.cloudbase.net/)的 Flutter 插件，更多的云开发 Flutter 插件请见[云开发文档](https://docs.cloudbase.net/api-reference/flutter/install)。
 
-此版本为官方空安全版本的临时替代包，用于升级空安全使用，所有官方 API 不变，直接替换使用.
+此package相比官方版本的差异：
+  * 支持空安全
+  * 删除过时的API调用
+  * 升级依赖版本
 
-[cloudbase_ce](https://pub.flutter-io.cn/packages/cloudbase_ce) 将以下包全部都集成在了当中（就图个省事~）
 
 ## 平台支持
 
