@@ -33,12 +33,10 @@ jobs:
       fail-fast: false # Important
       matrix:
         runner: [ubuntu, windows, macos]
-        target: [android, ios]
-        exclude:
-          # Specify which targets don't build
-          - runner: ubuntu
-            target: ios
-          - runner: windows
+        target: [android] #For all platforms
+        include:
+          # Only for ios on macos
+          - runner: macos
             target: ios
 
     steps:
@@ -70,10 +68,10 @@ jobs:
         if: matrix.target == 'android'
         working-directory: example/
         run: |
-          flutter build apk
-          flutter build appbundle
+          flutter build apk --verbose
+          flutter build appbundle --verbose
 
       - name: Build iOS example
         if: matrix.target == 'ios'
         working-directory: example/
-        run: flutter build ios --no-codesign
+        run: flutter build ios --no-codesign --verbose
