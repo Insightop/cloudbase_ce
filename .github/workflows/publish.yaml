@@ -1,44 +1,46 @@
-name: publish
-on:
-  push:
-    tags:
-      - "v[0-9]+.[0-9]+.[0-9]+*"
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: "Tag to publish"
-        required: true
-        default: "v0.0.0"
+# name: Publish
 
-jobs:
-  publish:
-    name: Publish
-    env:
-      PUBLISHER_TOKEN: ${{ secrets.PUB_DEV_TOKEN }} # Setting the environment variable from a secret
-    environment: pub.dev # Specify the github actions deployment environment
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write # Required for authentication using OIDC
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+# on:
+#   push:
+#     tags:
+#       - "v[0-9]+.[0-9]+.[0-9]+*"
 
-      - name: Checkout submodules
-        run: git submodule update --init --recursive
+# jobs:
+#   publish:
+#     name: Publish
+#     runs-on: ubuntu-latest
+#     env:
+#       PUBLISHER_TOKEN: ${{ secrets.PUB_DEV_TOKEN }} # Setting the environment variable from a secret
+#     environment: "pub.dev" # Specify the github actions deployment environment
+#     permissions:
+#       id-token: write # Required for authentication using OIDC
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: "stable"
-          cache: true
+#     steps:
+#       - name: Setup
+#         uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+#         with:
+#           environment: "pub.dev"
+#           # working-directory: path/to/package/within/repository
 
-      - name: Get dependencies
-        run: flutter pub get
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
 
-      - name: Publish test
-        run: flutter pub publish --dry-run
+#       - name: Checkout submodules
+#         run: git submodule update --init --recursive
 
-      - name: Publish to pub.dev
-        run: flutter pub publish --force
-        env:
-          PUBLISHER_TOKEN: ${{ env.PUBLISHER_TOKEN }}
+#       - name: Setup Flutter
+#         uses: subosito/flutter-action@v2
+#         with:
+#           channel: "stable"
+#           cache: true
+
+#       - name: Get dependencies
+#         run: flutter pub get
+
+#       - name: Publish test
+#         run: flutter pub publish --dry-run
+
+#       - name: Publish to pub.dev
+#         run: flutter pub publish --force
+#         env:
+#           PUBLISHER_TOKEN: ${{ env.PUBLISHER_TOKEN }}

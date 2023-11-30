@@ -78,7 +78,7 @@ CloudBaseCore core = CloudBaseCore.init({
 
 ## CI/CD
 
-- 自动化编译测试
-- 自动化发布到 pub.dev
-- 自动化升级依赖版本(pub, github-actions)
-- 自动化质量控制
+- [x] 自动化编译测试
+- [ ] 自动化发布到 pub.dev
+- [x] 自动化升级依赖版本(pub, github-actions)
+- [x] 自动化质量控制
