@@ -1,0 +1,60 @@
+name: qc
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  # Cancels the workflow
+  # when another event in the same context happens.
+  # If it's a PR, context is the pull request number.
+  # Otherwise, it uses the Git reference(branch or tag name).
+  group: >
+    ${{ github.workflow }}
+    ${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  code:
+    name: dart-code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      - name: Fetch Flutter dependencies
+        run: flutter pub get
+
+      - name: Analyze code
+        run: dart analyze --fatal-infos
+
+      - name: Format code
+        run: dart format .
+
+      - name: Check if the code has changed
+        run: git diff --exit-code
+
+  config:
+    name: configuration-files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check files with Prettier
+        uses: creyD/prettier_action@v4.3
+        with:
+          dry: True
+          prettier_options: >
+            --write
+            ./**/*.{md,yaml}
