@@ -4,14 +4,6 @@
 import 'dart:async';
 import 'package:cloudbase_ce/cloudbase_ce.dart';
 
-import 'baseAuth.dart';
-import 'wxAuth.dart';
-import 'anonymousAuth.dart';
-import 'customAuth.dart';
-import 'interface.dart';
-
-import 'package:cloudbase_ce/cloudbase_core/auth.dart';
-
 class CloudBaseAuth extends AuthProvider {
   WxAuthProvider? _wxAuthProvider;
   CustomAuthProvider? _customAuthProvider;

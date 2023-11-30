@@ -2,8 +2,6 @@
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 import 'package:cloudbase_ce/cloudbase_ce.dart';
-import 'baseAuth.dart';
-import 'interface.dart';
 
 class CustomAuthProvider extends AuthProvider {
   CustomAuthProvider(CloudBaseCore core) : super(core);

@@ -6,13 +6,6 @@ import 'dart:convert' as JSON;
 import 'dart:math';
 
 import 'package:cloudbase_ce/cloudbase_ce.dart';
-import 'package:cloudbase_ce/cloudbase_database/config/error_config.dart';
-import 'package:cloudbase_ce/cloudbase_database/realtime/error.dart';
-import 'package:cloudbase_ce/cloudbase_database/realtime/listener.dart';
-import 'package:cloudbase_ce/cloudbase_database/realtime/message.dart';
-import 'package:cloudbase_ce/cloudbase_database/realtime/snapshot.dart';
-import 'package:cloudbase_ce/cloudbase_database/realtime/utils.dart';
-import 'package:cloudbase_ce/cloudbase_database/realtime/websocket_client.dart';
 
 class WatchSessionInfo {
   String? queryID;
@@ -106,7 +99,7 @@ class SingleDocChange {
   }
 }
 
-enum WATCH_STATUS {
+enum WatchStatus {
   LOGGINGIN,
   INITING,
   REBUILDING,
@@ -152,7 +145,7 @@ class VirtualWebSocketClient {
 
   // own
   RealtimeListener? listener;
-  WATCH_STATUS? _watchStatus;
+  WatchStatus? _watchStatus;
   late AvailableRetries _availableRetries;
   Timer? _ackTimer;
   Future<void>? _initWatchPromise;
@@ -213,7 +206,7 @@ class VirtualWebSocketClient {
   }
 
   Future<LoginResult> _internalLogin({String? envId, bool? refresh}) async {
-    this._watchStatus = WATCH_STATUS.LOGGINGIN;
+    this._watchStatus = WatchStatus.LOGGINGIN;
     LoginResult loginResult = await this._login(envId: envId, refresh: refresh);
     if (this._envId == null) {
       this._envId = loginResult.envId;
@@ -250,7 +243,7 @@ class VirtualWebSocketClient {
 
   void _internalInitWatch(bool? forceRefreshLogin, Completer completer) async {
     try {
-      if (this._watchStatus == WATCH_STATUS.PAUSED) {
+      if (this._watchStatus == WatchStatus.PAUSED) {
         Console.log('[realtime] initWatch cancelled on pause');
         return completer.complete();
       }
@@ -260,12 +253,12 @@ class VirtualWebSocketClient {
         refresh: forceRefreshLogin,
       );
 
-      if (this._watchStatus == WATCH_STATUS.PAUSED) {
+      if (this._watchStatus == WatchStatus.PAUSED) {
         Console.log('[realtime] initWatch cancelled on pause');
         return completer.complete();
       }
 
-      this._watchStatus = WATCH_STATUS.INITING;
+      this._watchStatus = WatchStatus.INITING;
 
       var initWatchMsg = {
         'watchId': this.watchId,
@@ -318,7 +311,7 @@ class VirtualWebSocketClient {
       }
 
       this._onWatchStart(this, this._sessionInfo!.queryID!);
-      this._watchStatus = WATCH_STATUS.ACTIVE;
+      this._watchStatus = WatchStatus.ACTIVE;
       this._availableRetries.initWatch = DEFAULT_MAX_AUTO_RETRY_ON_ERROR;
       completer.complete();
     } catch (e) {
@@ -360,7 +353,7 @@ class VirtualWebSocketClient {
     Completer completer,
   ) async {
     try {
-      if (this._watchStatus == WATCH_STATUS.PAUSED) {
+      if (this._watchStatus == WatchStatus.PAUSED) {
         Console.log('[realtime] initWatch cancelled on pause');
         return completer.complete();
       }
@@ -374,12 +367,12 @@ class VirtualWebSocketClient {
         throw 'can not rebuildWatch without a successful initWatch (lack of sessionInfo)';
       }
 
-      if (this._watchStatus == WATCH_STATUS.PAUSED) {
+      if (this._watchStatus == WatchStatus.PAUSED) {
         Console.log('[realtime] rebuildWatch cancelled on pause');
         return completer.complete();
       }
 
-      this._watchStatus = WATCH_STATUS.REBUILDING;
+      this._watchStatus = WatchStatus.REBUILDING;
 
       var rebuildWatchMsg = {
         'watchId': this.watchId,
@@ -406,7 +399,7 @@ class VirtualWebSocketClient {
 
       await this._handleServerEvents(nextEventMsg);
 
-      this._watchStatus = WATCH_STATUS.ACTIVE;
+      this._watchStatus = WatchStatus.ACTIVE;
       this._availableRetries.rebuildWatch = DEFAULT_MAX_AUTO_RETRY_ON_ERROR;
       completer.complete();
     } catch (e) {
@@ -482,7 +475,7 @@ class VirtualWebSocketClient {
           } else {
             await Future.delayed(
                 Duration(milliseconds: DEFAULT_WAIT_TIME_ON_UNKNOWN_ERROR));
-            if (this._watchStatus == WATCH_STATUS.PAUSED) {
+            if (this._watchStatus == WatchStatus.PAUSED) {
               completer.completeError(CancelledException(
                   message:
                       '$operationName cancelled due to pause after unknownError'));
@@ -504,14 +497,14 @@ class VirtualWebSocketClient {
     String? queryId =
         this._sessionInfo != null ? this._sessionInfo!.queryID : '';
 
-    if (this._watchStatus != WATCH_STATUS.ACTIVE) {
-      this._watchStatus = WATCH_STATUS.CLOSED;
+    if (this._watchStatus != WatchStatus.ACTIVE) {
+      this._watchStatus = WatchStatus.CLOSED;
       this._onWatchClose(this, queryId);
       return;
     }
 
     try {
-      this._watchStatus = WATCH_STATUS.CLOSING;
+      this._watchStatus = WatchStatus.CLOSING;
 
       var closeWatchMsg = {
         'watchId': this.watchId,
@@ -522,7 +515,7 @@ class VirtualWebSocketClient {
       await this._send(msg: closeWatchMsg);
 
       this._sessionInfo = null;
-      this._watchStatus = WATCH_STATUS.CLOSED;
+      this._watchStatus = WatchStatus.CLOSED;
     } catch (e) {
       this.closeWithError(CloudBaseException(
           code: ErrCode.SDK_DATABASE_REALTIME_LISTENER_CLOSE_WATCH_FAIL,
@@ -554,7 +547,7 @@ class VirtualWebSocketClient {
 
   Future<void> _sendACK() async {
     try {
-      if (this._watchStatus != WATCH_STATUS.ACTIVE) {
+      if (this._watchStatus != WatchStatus.ACTIVE) {
         this._scheduleSendACK();
         return;
       }
@@ -727,7 +720,7 @@ class VirtualWebSocketClient {
       SingleDocChange change = allChangeEvents[i];
 
       if (sessionInfo.currentEventId >= change.id) {
-        if (allChangeEvents[i - 1] == null ||
+        if ( //allChangeEvents[i - 1] == null || //Commented unnecessary condition
             change.id > allChangeEvents[i - 1].id) {
           // duplicate event, dropable
           Console.warn(
@@ -903,7 +896,7 @@ class VirtualWebSocketClient {
         }
 
         if (i == len - 1 ||
-            (allChangeEvents[i + 1] != null &&
+            ( //allChangeEvents[i + 1] != null && //Commented unnecessary condition
                 allChangeEvents[i + 1].id != change.id)) {
           // a shallow slice creates a shallow snapshot
           List docsSnapshot = List.from(docs);
@@ -965,7 +958,7 @@ class VirtualWebSocketClient {
   void onMessage(msg) {
     // watchStatus sanity check
     switch (this._watchStatus) {
-      case WATCH_STATUS.PAUSED:
+      case WatchStatus.PAUSED:
         {
           // ignore all but error message
           if (msg['msgType'] != 'ERROR') {
@@ -973,21 +966,21 @@ class VirtualWebSocketClient {
           }
           break;
         }
-      case WATCH_STATUS.LOGGINGIN:
-      case WATCH_STATUS.INITING:
-      case WATCH_STATUS.REBUILDING:
+      case WatchStatus.LOGGINGIN:
+      case WatchStatus.INITING:
+      case WatchStatus.REBUILDING:
         {
           Console.warn(
               '[realtime listener] internal non-fatal error: unexpected message received while ${this._watchStatus}');
           return;
         }
-      case WATCH_STATUS.CLOSED:
+      case WatchStatus.CLOSED:
         {
           Console.warn(
               '[realtime listener] internal non-fatal error: unexpected message received when the watch has closed');
           return;
         }
-      case WATCH_STATUS.ERRORED:
+      case WatchStatus.ERRORED:
         {
           Console.warn(
               '[realtime listener] internal non-fatal error: unexpected message received when the watch has ended with error');
@@ -1051,7 +1044,7 @@ class VirtualWebSocketClient {
   }
 
   void closeWithError(error) {
-    this._watchStatus = WATCH_STATUS.ERRORED;
+    this._watchStatus = WatchStatus.ERRORED;
     this._clearACKSchedule();
     this.listener?.onError?.call(error);
     String queryID =
@@ -1063,14 +1056,14 @@ class VirtualWebSocketClient {
   }
 
   void pause() {
-    this._watchStatus = WATCH_STATUS.PAUSED;
+    this._watchStatus = WatchStatus.PAUSED;
 
     Console.log(
         '[realtime] client paused (${this._collectionName} ${this._query}) (watchId ${this.watchId})');
   }
 
   Future<void> resume() async {
-    this._watchStatus = WATCH_STATUS.RESUMING;
+    this._watchStatus = WatchStatus.RESUMING;
 
     Console.log(
         '[realtime] client resuming with ${this._sessionInfo != null ? 'REBUILD_WATCH' : 'INIT_WATCH'} (${this._collectionName} ${this._query}) (${this.watchId})');

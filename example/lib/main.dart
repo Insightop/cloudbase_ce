@@ -1,11 +1,5 @@
 import 'dart:developer' as dev;
 
-import 'package:cloudbase_ce/cloudbase_database/collection.dart';
-import 'package:cloudbase_ce/cloudbase_database/database.dart';
-import 'package:cloudbase_ce/cloudbase_database/query.dart';
-import 'package:cloudbase_ce/cloudbase_database/realtime/listener.dart';
-import 'package:cloudbase_ce/cloudbase_database/realtime/snapshot.dart';
-import 'package:cloudbase_ce/cloudbase_database/response.dart';
 import 'package:cloudbase_ce/cloudbase_ce.dart';
 import 'package:cloudbase_ce/test_method_channel.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +91,7 @@ class _MyAppState extends State<MyApp> {
                   child: Text('Run TEST')),
               Text(
                 _platformTest,
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
               )
             ],
           ),

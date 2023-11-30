@@ -5,29 +5,29 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-enum WS_READY_STATUS { CONNECTING, OPEN, CLOSING, CLOSED }
+enum WsReadyStatus { CONNECTING, OPEN, CLOSING, CLOSED }
 
 class WSChannel {
   late String _wsUrl;
   WebSocket? _ws;
-  // late WS_READY_STATUS _status;
+  // late WsReadyStatus _status;
 
   get readyState {
     if (_ws == null) {
-      return WS_READY_STATUS.CLOSED;
+      return WsReadyStatus.CLOSED;
     }
 
     switch (_ws!.readyState) {
       case WebSocket.open:
-        return WS_READY_STATUS.OPEN;
+        return WsReadyStatus.OPEN;
       case WebSocket.closed:
-        return WS_READY_STATUS.CLOSED;
+        return WsReadyStatus.CLOSED;
       case WebSocket.closing:
-        return WS_READY_STATUS.CLOSING;
+        return WsReadyStatus.CLOSING;
       case WebSocket.connecting:
-        return WS_READY_STATUS.CONNECTING;
+        return WsReadyStatus.CONNECTING;
       default:
-        return WS_READY_STATUS.CLOSED;
+        return WsReadyStatus.CLOSED;
     }
   }
 

@@ -16,7 +16,7 @@ class CloseEventInfo {
   });
 }
 
-Map<num, CloseEventInfo> CloseEventCodeInfo = {
+Map<num, CloseEventInfo> closeEventCodeInfo = {
   1000: CloseEventInfo(
       code: 1000,
       name: 'Normal Closure',
@@ -147,7 +147,7 @@ class CloseEventCode {
 }
 
 CloudBaseException getWSCloseError(int code, String? reason) {
-  CloseEventInfo? info = CloseEventCodeInfo[code];
+  CloseEventInfo? info = closeEventCodeInfo[code];
   String errMsg = info == null
       ? 'code $code'
       : '${info.name}, code $code, reason ${reason != null ? reason : info.description}';

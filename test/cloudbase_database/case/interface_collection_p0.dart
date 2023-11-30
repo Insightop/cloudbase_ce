@@ -51,12 +51,10 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'data': {
           'wcc': "自动化测试一路顺风！",
-          '_id': "W_0Cuc6YbCHWYMcK"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK" //插入一条数据，指定ID
         },
       },
-      'output': {
-        'id': 'W_0Cuc6YbCHWYMcK'
-      },
+      'output': {'id': 'W_0Cuc6YbCHWYMcK'},
       'eval': (res) => res.id == 'W_0Cuc6YbCHWYMcK'
     },
 
@@ -84,7 +82,6 @@ var casesData = {
       'eval': (res) => res.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK'
     },
 
-
     {
       'desc': 'doc_get获取一条记录数据',
       'run_count': 1,
@@ -105,9 +102,7 @@ var casesData = {
         'cmd': 'collection_update',
         'collection_name': 'doc_wcc',
         'doc_id': 'W_0Cuc6YbCHWYMcK',
-        'data': {
-          'wcc': "collection_update测试成功"
-        },
+        'data': {'wcc': "collection_update测试成功"},
       },
       'eval': (res) => res.updated == 1
     },
@@ -120,9 +115,7 @@ var casesData = {
         'cmd': 'doc_update',
         'collection_name': 'doc_wcc',
         'doc_id': 'W_0Cuc6YbCHWYMcK',
-        'data': {
-          'wcc': "doc_update测试成功"
-        },
+        'data': {'wcc': "doc_update测试成功"},
       },
       'eval': (res) => res.updated == 1
     },
@@ -135,10 +128,7 @@ var casesData = {
         'cmd': 'doc_set',
         'collection_name': 'doc_wcc',
         'doc_id': 'W_0Cuc6YbCHWYMcK',
-        'data': {
-          'wcc': "doc_set_updated测试成功",
-          'test': "test collection field"
-        },
+        'data': {'wcc': "doc_set_updated测试成功", 'test': "test collection field"},
       },
       'eval': (res) => res.updated == 1
     },
@@ -151,9 +141,7 @@ var casesData = {
         'cmd': 'doc_set',
         'collection_name': 'doc_wcc',
         'doc_id': "W_docset_created",
-        'data': {
-          'wcc': "doc_set_created测试成功"
-        },
+        'data': {'wcc': "doc_set_created测试成功"},
       },
       'eval': (res) => res.updated == 0
     },
@@ -164,9 +152,7 @@ var casesData = {
       'request': {
         'cmd': 'collection_where',
         'collection_name': 'doc_wcc',
-        'filter': {
-          'wcc': "doc_set_created测试成功"
-        },
+        'filter': {'wcc': "doc_set_created测试成功"},
       },
       'eval': (res) => res.data.length == 1
     },
@@ -204,10 +190,7 @@ var casesData = {
       'request': {
         'cmd': 'collection_field',
         'collection_name': 'doc_wcc',
-        'field': {
-          '_id': false,
-          'wcc': true
-        }
+        'field': {'_id': false, 'wcc': true}
       },
       'eval': (res) => res.data[0]['_id'] == null && res.data[0]['wcc'] != null
     },
@@ -232,10 +215,7 @@ var casesData = {
       'request': {
         'cmd': 'collection_field',
         'collection_name': 'doc_wcc',
-        'field': {
-          'wcc': true,
-          'test': true
-        }
+        'field': {'wcc': true, 'test': true}
       },
       'eval': (res) => res.data[0]['test'] != null && res.data[0]['wcc'] != null
     },
@@ -271,9 +251,7 @@ var casesData = {
       'request': {
         'cmd': 'collection_remove',
         'collection_name': 'doc_wcc',
-        'filter': {
-          'wcc': "doc_set_updated测试成功"
-        }
+        'filter': {'wcc': "doc_set_updated测试成功"}
       },
       'eval': (res) => res.deleted == 1
     },
@@ -289,6 +267,5 @@ var casesData = {
       },
       'eval': (res) => res.deleted == 1
     },
-
   ]
 };

@@ -385,7 +385,7 @@ class RealtimeWebSocketClient {
   }
 
   bool _isWSConnected() {
-    return this._ws?.readyState == WS_READY_STATUS.OPEN;
+    return this._ws?.readyState == WsReadyStatus.OPEN;
   }
 
   Future<void> _onceWSConnected() {
@@ -520,7 +520,7 @@ class RealtimeWebSocketClient {
             milliseconds: immediate ? 0 : this._realtimePingInterval.toInt()),
         () async {
       try {
-        if (this._ws?.readyState != WS_READY_STATUS.OPEN) {
+        if (this._ws?.readyState != WsReadyStatus.OPEN) {
           return;
         }
 
@@ -629,7 +629,7 @@ class RealtimeWebSocketClient {
         throw 'invalid state: ws connection not exists, can not send message';
       }
 
-      if (this._ws!.readyState != WS_READY_STATUS.OPEN) {
+      if (this._ws!.readyState != WsReadyStatus.OPEN) {
         throw 'ws readyState invalid: ${this._ws!.readyState}, can not send message';
       }
 
@@ -660,7 +660,7 @@ class RealtimeWebSocketClient {
     this._clearHeartbeat();
 
     if (this._ws != null) {
-      this._ws!.close(code.toInt(), CloseEventCodeInfo[code]?.name);
+      this._ws!.close(code.toInt(), closeEventCodeInfo[code]?.name);
       this._ws = null;
     }
   }

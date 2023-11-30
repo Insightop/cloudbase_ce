@@ -1,12 +1,10 @@
-
 import 'package:cloudbase_ce/cloudbase_database/geo.dart';
 
 var geo = Geo();
 
 var casesData = {
-
   'name': 'interface_geo_p0集合',
-  'skip': false,   //其中包含console用例，在本地跑先skip，否则注释掉或改为false
+  'skip': false, //其中包含console用例，在本地跑先skip，否则注释掉或改为false
   'cases': [
     {
       'desc': 'collection_clean清理掉所有的集合数据。',
@@ -40,7 +38,7 @@ var casesData = {
         'data': {
           'empty_object': {},
           'empty_array': [],
-          '_id': "W_0Cuc6YbCHWYMcK00"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK00" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK00'",
@@ -59,7 +57,7 @@ var casesData = {
           'Point': geo.point(0, 0),
           'test02': geo.point(1, 90),
           'test03': geo.point(180, 1),
-          '_id': "W_0Cuc6YbCHWYMcK01"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK01" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK01'",
@@ -77,7 +75,7 @@ var casesData = {
         'data': {
           'Point': geo.point(-180, -1),
           'test02': geo.point(-1, -90),
-          '_id': "W_0Cuc6YbCHWYMcK02"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK02" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK02'",
@@ -96,8 +94,8 @@ var casesData = {
           'test01': geo.point(-179.9, -89.9),
           'test02': geo.point(179.9, 89.9),
           'test03': geo.point(0.1, 0.1),
-          'geo04': geo.point(-0.1, - 0.1),
-          '_id': "W_0Cuc6YbCHWYMcK03"     //插入一条数据，指定ID
+          'geo04': geo.point(-0.1, -0.1),
+          '_id': "W_0Cuc6YbCHWYMcK03" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK03'",
@@ -113,10 +111,7 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'name': 'geo_LineString',
         'data': {
-          'LineString': geo.lineString([
-            geo.point(0, 0),
-            geo.point(0, 10)
-          ]),
+          'LineString': geo.lineString([geo.point(0, 0), geo.point(0, 10)]),
           'test02': geo.lineString([
             geo.point(0, 0),
             geo.point(80, 80),
@@ -128,7 +123,7 @@ var casesData = {
             geo.point(10, 10),
             geo.point(20, 20),
           ]),
-          '_id': "W_0Cuc6YbCHWYMcK04"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK04" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK04'",
@@ -163,10 +158,8 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'name': 'geo_MultiPoint',
         'data': {
-          'MultiPoint': geo.multiPoint([
-            geo.point(0, 0)
-          ]),
-          '_id': "W_0Cuc6YbCHWYMcK05"     //插入一条数据，指定ID
+          'MultiPoint': geo.multiPoint([geo.point(0, 0)]),
+          '_id': "W_0Cuc6YbCHWYMcK05" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK05'",
@@ -186,7 +179,7 @@ var casesData = {
             geo.point(0, 0),
             geo.point(0, 20),
           ]),
-          '_id': "W_0Cuc6YbCHWYMcK06"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK06" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK06'",
@@ -203,12 +196,9 @@ var casesData = {
         'name': 'geo_MultiLineString',
         'data': {
           'MultiLineString': geo.multiLineString([
-            geo.lineString([
-              geo.point(0, 0),
-              geo.point(0, 10)
-            ]),
+            geo.lineString([geo.point(0, 0), geo.point(0, 10)]),
           ]),
-          '_id': "W_0Cuc6YbCHWYMcK07"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK07" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK07'",
@@ -225,16 +215,10 @@ var casesData = {
         'name': 'geo_MultiLineString2',
         'data': {
           'MultiLineString': geo.multiLineString([
-            geo.lineString([
-              geo.point(0, 0),
-              geo.point(0, 10)
-            ]),
-            geo.lineString([
-              geo.point(0, 20),
-              geo.point(0, 30)
-            ])
+            geo.lineString([geo.point(0, 0), geo.point(0, 10)]),
+            geo.lineString([geo.point(0, 20), geo.point(0, 30)])
           ]),
-          '_id': "W_0Cuc6YbCHWYMcK08"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK08" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK08'",
@@ -258,7 +242,7 @@ var casesData = {
               geo.point(0, 30),
             ])
           ]),
-          '_id': "W_0Cuc6YbCHWYMcK09"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK09" //插入一条数据，指定ID
         },
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK09'",
@@ -284,7 +268,7 @@ var casesData = {
               ])
             ]),
           ]),
-          '_id': "W_0Cuc6YbCHWYMcK14"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK14" //插入一条数据，指定ID
         }
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK14'",
@@ -318,7 +302,7 @@ var casesData = {
               ])
             ])
           ]),
-          '_id': "W_0Cuc6YbCHWYMcK15"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK15" //插入一条数据，指定ID
         }
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK15'",
@@ -358,16 +342,13 @@ var casesData = {
             ])
           ]),
           'test15': geo.multiLineString([
-            geo.lineString([
-              geo.point(0, 0),
-              geo.point(0, 10)
-            ])
+            geo.lineString([geo.point(0, 0), geo.point(0, 10)])
           ]),
           'test16': geo.multiPoint([
             geo.point(0, 0),
             geo.point(0, 20),
           ]),
-          '_id': "W_0Cuc6YbCHWYMcK11"     //插入一条数据，指定ID
+          '_id': "W_0Cuc6YbCHWYMcK11" //插入一条数据，指定ID
         }
       },
       'eval': "response.id=='W_0Cuc6YbCHWYMcK11'",
@@ -622,7 +603,6 @@ var casesData = {
               geo.point(0, 90),
             ]),
           ])
-
         },
       },
       'eval': "response.code=='DATABASE_REQUEST_FAILED'",
@@ -775,10 +755,7 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'geoIntersects_key': "test02",
         'geoIntersects_value': {
-          'geometry': geo.multiPoint([
-            geo.point(10, 10),
-            geo.point(-1, -90)
-          ])
+          'geometry': geo.multiPoint([geo.point(10, 10), geo.point(-1, -90)])
         },
       },
       'eval': "response.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK02'",
@@ -789,7 +766,8 @@ var casesData = {
     //'"MultiPoint": geo.multiPoint([geo.point(0,0),geo.point(0,20)]), ID':W_0Cuc6YbCHWYMcK06
     //'"MultiPoint": geo.multiPoint([geo.point(0,0)]) ID':W_0Cuc6YbCHWYMcK05
     {
-      'desc': 'geoIntersects校验-geometry为MultiPoint ，待查询字段（GEO类型为MultiPoint）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiPoint ，待查询字段（GEO类型为MultiPoint）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -798,17 +776,15 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'geoIntersects_key': "MultiPoint",
         'geoIntersects_value': {
-          'geometry': geo.multiPoint([
-            geo.point(10, 10),
-            geo.point(0, 20)
-          ])
+          'geometry': geo.multiPoint([geo.point(10, 10), geo.point(0, 20)])
         },
       },
       'eval': "response.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK06'",
       'expect': (res) => res.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK06'
     },
     {
-      'desc': 'geoIntersects校验-geometry为MultiLineString，待查询字段（GEO类型为MultiPoint）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiLineString，待查询字段（GEO类型为MultiPoint）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -818,14 +794,8 @@ var casesData = {
         'geoIntersects_key': "MultiPoint",
         'geoIntersects_value': {
           'geometry': geo.multiLineString([
-            geo.lineString([
-              geo.point(0, 5),
-              geo.point(0, 40)
-            ]),
-            geo.lineString([
-              geo.point(-10, 30),
-              geo.point(10, 30)
-            ]),
+            geo.lineString([geo.point(0, 5), geo.point(0, 40)]),
+            geo.lineString([geo.point(-10, 30), geo.point(10, 30)]),
           ])
         },
       },
@@ -833,7 +803,8 @@ var casesData = {
       'expect': (res) => res.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK06'
     },
     {
-      'desc': 'geoIntersects校验-geometry为MultiPolygon，待查询字段（GEO类型为MultiPoint）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiPolygon，待查询字段（GEO类型为MultiPoint）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -860,7 +831,8 @@ var casesData = {
     },
 
     {
-      'desc': 'geoIntersects校验-geometry为LineString，待查询字段（GEO类型为MultiPoint）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为LineString，待查询字段（GEO类型为MultiPoint）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -880,7 +852,8 @@ var casesData = {
     },
 
     {
-      'desc': 'geoIntersects校验-geometry为LineString，待查询字段（GEO类型为MultiPoint）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为LineString，待查询字段（GEO类型为MultiPoint）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -905,7 +878,8 @@ var casesData = {
     },
 
     {
-      'desc': 'geoIntersects校验-geometry为MultiPoint，待查询字段（GEO类型为MultiPolygon）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiPoint，待查询字段（GEO类型为MultiPolygon）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -924,7 +898,8 @@ var casesData = {
       'expect': (res) => res.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK15'
     },
     {
-      'desc': 'geoIntersects校验-geometry为MultiPolygon，待查询字段（GEO类型为MultiPolygon）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiPolygon，待查询字段（GEO类型为MultiPolygon）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -949,7 +924,8 @@ var casesData = {
       'expect': (res) => res.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK15'
     },
     {
-      'desc': 'geoIntersects校验-geometry为MultiLineString，待查询字段（GEO类型为MultiPolygon）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiLineString，待查询字段（GEO类型为MultiPolygon）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -971,7 +947,8 @@ var casesData = {
     },
 
     {
-      'desc': 'geoIntersects校验-geometry为MultiPoint，待查询字段（GEO类型为MultiLineString）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiPoint，待查询字段（GEO类型为MultiLineString）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -990,7 +967,8 @@ var casesData = {
       'expect': (res) => res.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK08'
     },
     {
-      'desc': 'geoIntersects校验-geometry为MultiLineString，待查询字段（GEO类型为MultiLineString）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiLineString，待查询字段（GEO类型为MultiLineString）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {
@@ -1011,7 +989,8 @@ var casesData = {
       'expect': (res) => res.data[0]['_id'] == 'W_0Cuc6YbCHWYMcK08'
     },
     {
-      'desc': 'geoIntersects校验-geometry为MultiPolygon，待查询字段（GEO类型为MultiLineString）与之相交叉',
+      'desc':
+          'geoIntersects校验-geometry为MultiPolygon，待查询字段（GEO类型为MultiLineString）与之相交叉',
       'run_count': 1,
       'level': 0,
       'request': {

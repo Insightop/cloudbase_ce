@@ -22,10 +22,8 @@
 */
 
 var casesData = {
-
   'name': 'interface_command_p0集合',
   'cases': [
-
     {
       'desc': 'collection_clean清理掉所有的集合数据。',
       'run_count': 1,
@@ -35,7 +33,6 @@ var casesData = {
         'collection_name': 'doc_wcc',
       },
     },
-
     {
       'desc': 'collection_count检查所有集合数据量',
       'run_count': 1,
@@ -46,7 +43,6 @@ var casesData = {
       },
       'expect': (res) => res.total == 0
     },
-
     {
       'desc': 'collection_add插入第一条数据记录',
       'run_count': 1,
@@ -55,18 +51,16 @@ var casesData = {
         'cmd': 'collection_add',
         'collection_name': 'doc_wcc',
         'data': {
-          '_id': "W_0Cuc6YbCHWYMcK01",     //指定ID
+          '_id': "W_0Cuc6YbCHWYMcK01", //指定ID
           'string01': "auto test!",
           'number02': 36000,
-          'object03': { 'test': "hello!", 'temp': "OK" },
+          'object03': {'test': "hello!", 'temp': "OK"},
           'array04': ["one", "two"],
           'bool05': true,
           'null06': null
         },
       },
-      'output': {
-        'id': "{{{id}}}"
-      },
+      'output': {'id': "{{{id}}}"},
       'expect': (res) => res.id == 'W_0Cuc6YbCHWYMcK01'
     },
     {
@@ -77,10 +71,10 @@ var casesData = {
         'cmd': 'collection_add',
         'collection_name': 'doc_wcc',
         'data': {
-          '_id': "W_0Cuc6YbCHWYMcK02",     //指定ID
+          '_id': "W_0Cuc6YbCHWYMcK02", //指定ID
           'string01': "auto test02!",
           'number02': 25000,
-          'object03': { 'test': "hello baby!", 'temp': "SOLO" },
+          'object03': {'test': "hello baby!", 'temp': "SOLO"},
           'array04': [1, 2],
           'bool05': false,
           'null06': null
@@ -88,7 +82,6 @@ var casesData = {
       },
       'expect': (res) => res.id == 'W_0Cuc6YbCHWYMcK02'
     },
-
     {
       'desc': 'command_eq判断字段是否等于指定值',
       'run_count': 1,
@@ -101,7 +94,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] == 36000
     },
-
     {
       'desc': 'command_neq判断字段是否不等于指定值',
       'run_count': 1,
@@ -114,7 +106,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] != 36000
     },
-
     {
       'desc': 'command_lt判断字段是否小于指定值',
       'run_count': 1,
@@ -127,7 +118,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] < 36000
     },
-
     {
       'desc': 'command_lte判断字段是否小于或等于指定值',
       'run_count': 1,
@@ -140,7 +130,6 @@ var casesData = {
       },
       'expect': (res) => res.data.length == 2
     },
-
     {
       'desc': 'command_gt判断字段是否大于指定值',
       'run_count': 1,
@@ -153,7 +142,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] > 30000
     },
-
     {
       'desc': 'command_gte判断字段是否大于或等于指定值',
       'run_count': 1,
@@ -166,7 +154,6 @@ var casesData = {
       },
       'expect': (res) => res.data.length == 2
     },
-
     {
       'desc': 'command_in判断字段值是否在指定数组中',
       'run_count': 1,
@@ -179,7 +166,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] == 36000
     },
-
     {
       'desc': 'command_nin判断字段值是否不在指定数组中',
       'run_count': 1,
@@ -192,7 +178,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] == 25000
     },
-
     {
       'desc': 'command_and条件与，表示需同时满足另一个条件',
       'run_count': 1,
@@ -206,7 +191,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] == 25000
     },
-
     {
       'desc': 'command_or条件或，表示需满足其中一个条件',
       'run_count': 1,
@@ -220,7 +204,6 @@ var casesData = {
       },
       'expect': (res) => res.data.length == 2
     },
-
     {
       'desc': 'command_set设置字段为指定值',
       'run_count': 1,
@@ -230,7 +213,7 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'doc_id': 'W_0Cuc6YbCHWYMcK01',
         'set_key': "object03",
-        'set_value': { 'test''': 'success' }
+        'set_value': {'test' '': 'success'}
       },
       'expect': (res) => res.updated == 1
     },
@@ -242,11 +225,11 @@ var casesData = {
         'cmd': 'doc_get',
         'collection_name': 'doc_wcc',
         'doc_id': "W_0Cuc6YbCHWYMcK01",
-
       },
-      'expect': (res) => res.data[0]['object03']['test'] == 'success' && res.data[0]['object03']['temp'] == null
+      'expect': (res) =>
+          res.data[0]['object03']['test'] == 'success' &&
+          res.data[0]['object03']['temp'] == null
     },
-
     {
       'desc': 'command_remove删除字段',
       'run_count': 1,
@@ -270,7 +253,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['object03'] == null
     },
-
     {
       'desc': 'command_inc原子自增字段值',
       'run_count': 1,
@@ -295,7 +277,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] == 40000
     },
-
     {
       'desc': 'command_mul原子自乘字段值',
       'run_count': 1,
@@ -320,7 +301,6 @@ var casesData = {
       },
       'expect': (res) => res.data[0]['number02'] == 160000000
     },
-
     {
       'desc': 'command_push往数组尾部增加指定值',
       'run_count': 1,
@@ -343,9 +323,10 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'doc_id': "W_0Cuc6YbCHWYMcK01",
       },
-      'expect': (res) => res.data[0]['array04'][2] == 'three' && res.data[0]['array04'].length == 3
+      'expect': (res) =>
+          res.data[0]['array04'][2] == 'three' &&
+          res.data[0]['array04'].length == 3
     },
-
     {
       'desc': 'command_pop从数组尾部删除一个元素',
       'run_count': 1,
@@ -367,9 +348,10 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'doc_id': "W_0Cuc6YbCHWYMcK01",
       },
-      'expect': (res) => res.data[0]['array04'][1] != 'three' && res.data[0]['array04'].length == 2
+      'expect': (res) =>
+          res.data[0]['array04'][1] != 'three' &&
+          res.data[0]['array04'].length == 2
     },
-
     {
       'desc': 'command_shift从数组头部删除一个元素',
       'run_count': 1,
@@ -391,9 +373,10 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'doc_id': "W_0Cuc6YbCHWYMcK01",
       },
-      'expect': (res) => res.data[0]['array04'][0] != 'one' && res.data[0]['array04'].length == 1
+      'expect': (res) =>
+          res.data[0]['array04'][0] != 'one' &&
+          res.data[0]['array04'].length == 1
     },
-
     {
       'desc': 'command_unshift从数组头部增加一个元素',
       'run_count': 1,
@@ -416,7 +399,9 @@ var casesData = {
         'collection_name': 'doc_wcc',
         'doc_id': "W_0Cuc6YbCHWYMcK01",
       },
-      'expect': (res) => res.data[0]['array04'][0] == 'one' && res.data[0]['array04'].length == 2
+      'expect': (res) =>
+          res.data[0]['array04'][0] == 'one' &&
+          res.data[0]['array04'].length == 2
     },
   ]
 };
