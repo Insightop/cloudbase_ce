@@ -1,3 +1,10 @@
+## 2.1.0
+
+- Fix the recursion call issue, thanks @PazChen
+- Update deprecated APIs
+- Update CI/CD
+- Format code
+
 ## 2.0.4
 
 - Update pubspec.yaml

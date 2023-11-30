@@ -72,13 +72,13 @@ CloudBaseCore core = CloudBaseCore.init({
 
 [云开发·初始化](https://docs.cloudbase.net/api-reference/flutter/initialization)
 
-## 贡献者
-
-[![GitHub contributors](https://contrib.rocks/image?repo=insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/graphs/contributors)
-
 ## CI/CD
 
 - [x] 自动化编译测试
 - [ ] 自动化发布到 pub.dev
 - [x] 自动化升级依赖版本(pub, github-actions)
 - [x] 自动化质量控制
+
+## 贡献者
+
+[![GitHub contributors](https://contrib.rocks/image?repo=insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/graphs/contributors)
