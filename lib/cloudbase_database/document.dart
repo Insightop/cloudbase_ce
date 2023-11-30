@@ -61,7 +61,7 @@ class Document {
       data.forEach((key, value) {
         if (value is UpdateCommand) {
           hasOperator = true;
-        } else if (value is Map && _checkOperatorMixed(data)) {
+        } else if (value is Map && _checkOperatorMixed(value)) {
           hasOperator = true;
         }
       });
