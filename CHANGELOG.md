@@ -1,3 +1,8 @@
+## 2.1.1
+
+- Fix spelling error
+- Organize the code
+
 ## 2.1.0
 
 - Fix the recursion call issue, thanks @PazChen
