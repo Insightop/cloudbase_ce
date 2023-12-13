@@ -1,8 +1,7 @@
 /// original pub package: https://pub.dev/packages/cloudbase_core
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-import './exception.dart';
-import './auth.dart';
+import 'package:cloudbase_ce/cloudbase_core/lib.dart';
 
 /// CloudBaseConfig
 class CloudBaseConfig {

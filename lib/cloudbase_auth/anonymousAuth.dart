@@ -1,12 +1,7 @@
 /// original pub package: https://pub.dev/packages/cloudbase_auth
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-import 'package:cloudbase_ce/cloudbase_auth/baseAuth.dart';
-import 'package:cloudbase_ce/cloudbase_auth/interface.dart';
-import 'package:cloudbase_ce/cloudbase_core/auth.dart';
-import 'package:cloudbase_ce/cloudbase_core/base.dart';
-import 'package:cloudbase_ce/cloudbase_core/exception.dart';
-import 'package:cloudbase_ce/cloudbase_core/request.dart';
+import 'package:cloudbase_ce/cloudbase_ce.dart';
 
 class AnonymousAuthProvider extends AuthProvider {
   AnonymousAuthProvider(CloudBaseCore core) : super(core);

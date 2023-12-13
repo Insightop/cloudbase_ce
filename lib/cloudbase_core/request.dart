@@ -1,12 +1,8 @@
 /// original pub package: https://pub.dev/packages/cloudbase_core
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
-import 'base.dart';
-import 'sign.dart';
-import 'trace.dart';
-import 'exception.dart';
-
 import 'package:dio/dio.dart';
+import 'package:cloudbase_ce/cloudbase_core/lib.dart';
 
 const int _TCB_DEFAULT_TIMEOUT = 15000;
 const String _VERSION = '0.0.2';

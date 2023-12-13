@@ -2,9 +2,7 @@
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 import 'package:dio/dio.dart';
-
-import './base.dart';
-import './store.dart';
+import 'package:cloudbase_ce/cloudbase_core/lib.dart';
 
 const String _TRACE_HEADER = 'x-tcb-trace';
 
