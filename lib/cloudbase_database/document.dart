@@ -5,7 +5,7 @@ import 'package:cloudbase_ce/cloudbase_core/exception.dart';
 import 'package:cloudbase_ce/cloudbase_core/request.dart';
 import 'package:cloudbase_ce/cloudbase_database/command/update.dart';
 
-/// orgin pub package: https://pub.dev/packages/cloudbase_database
+/// original pub package: https://pub.dev/packages/cloudbase_database
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 import 'package:cloudbase_ce/cloudbase_database/realtime/listener.dart';

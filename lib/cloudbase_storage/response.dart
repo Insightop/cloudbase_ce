@@ -1,4 +1,4 @@
-/// orgin pub package: https://pub.dev/packages/cloudbase_storage
+/// original pub package: https://pub.dev/packages/cloudbase_storage
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 import 'dart:convert';

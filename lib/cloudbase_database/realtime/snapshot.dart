@@ -1,4 +1,4 @@
-/// orgin pub package: https://pub.dev/packages/cloudbase_database
+/// original pub package: https://pub.dev/packages/cloudbase_database
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 import 'package:cloudbase_ce/cloudbase_database/realtime/virtual_websocket_client.dart';

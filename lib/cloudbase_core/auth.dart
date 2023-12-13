@@ -1,4 +1,4 @@
-/// orgin pub package: https://pub.dev/packages/cloudbase_core
+/// original pub package: https://pub.dev/packages/cloudbase_core
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 /// CloudBase Auth Type

@@ -1,4 +1,4 @@
-/// orgin pub package: https://pub.dev/packages/cloudbase_auth
+/// original pub package: https://pub.dev/packages/cloudbase_auth
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 import 'dart:async';
@@ -76,7 +76,7 @@ class AuthProvider implements ICloudBaseAuth {
 
     if (res == null) {
       throw new CloudBaseException(
-          code: CloudBaseExceptionCode.NULL_RESPONES,
+          code: CloudBaseExceptionCode.NULL_RESPONSE,
           message: "unknown error, res is null");
     }
 

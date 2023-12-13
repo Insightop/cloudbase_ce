@@ -31,7 +31,7 @@ class CloudBaseFunction {
 
     if (res == null) {
       throw new CloudBaseException(
-          code: CloudBaseExceptionCode.NULL_RESPONES,
+          code: CloudBaseExceptionCode.NULL_RESPONSE,
           message: "unknown error, res is null");
     }
 

@@ -2,7 +2,7 @@ import 'base.dart';
 
 import 'dart:convert';
 
-/// orgin pub package: https://pub.dev/packages/cloudbase_core
+/// original pub package: https://pub.dev/packages/cloudbase_core
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 import 'package:crypto/crypto.dart';

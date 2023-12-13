@@ -1,4 +1,4 @@
-/// orgin pub package: https://pub.dev/packages/cloudbase_core
+/// original pub package: https://pub.dev/packages/cloudbase_core
 /// author: https://cloudbase.net/ & lirongcong.bennett@gmail.com
 
 /// CloudBase Exception Code
@@ -12,8 +12,8 @@ class CloudBaseExceptionCode {
   /// NETWORK_ERR
   static const NETWORK_ERR = 'NETWORK_ERR';
 
-  /// NULL_RESPONES
-  static const NULL_RESPONES = 'NULL_RESPONES';
+  /// NULL_RESPONSE
+  static const NULL_RESPONSE = 'NULL_RESPONSE';
 
   /// 响应结果解析失败
   static const RESPONSE_PRASE_ERR = 'RESPONSE_PRASE_ERR';
