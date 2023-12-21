@@ -13,6 +13,7 @@
 [![Pub Popularity](https://img.shields.io/pub/popularity/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Points](https://img.shields.io/pub/points/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 
+<!-- [![Downloads](https://img.shields.io/github/downloads/insightoptech/cloudbase_ce/total)](https://github.com/insightoptech/cloudbase_ce/) -->
 <!-- [![GitHub Stars](https://img.shields.io/github/stars/insightoptech/cloudbase_ce?style=social)](https://github.com/insightoptech/cloudbase_ce/stargazers) -->
 
 [![GitHub Stars](https://img.shields.io/github/stars/insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/stargazers)
