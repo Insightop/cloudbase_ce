@@ -1,86 +1,96 @@
 <p align="center">
+  <a href="https://cloudbase.net/">
+    <img src="https://docs.cloudbase.net/img/logo.png" alt="cloudbase" style="max-width: 70px; max-height: 70px; vertical-align:bottom; margin:4px;">
+  </a>
   <a href="https://flutter.dev/">
-    <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-ar21.svg" alt="flutter" style="vertical-align:top; margin:4px;">
+    <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-ar21.svg" alt="flutter" style="vertical-align:bottom; margin:4px;">
   </a>
   <a href="https://dart.dev/">
-    <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-ar21.svg" alt="dart" style="vertical-align:top; margin:4px;">
+    <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-ar21.svg" alt="dart" style="vertical-align:bottom; margin:4px;">
   </a>
 </p>
-
-# CloudBase Flutter SDK Community Edition
 
 [![Pub Version](https://img.shields.io/pub/v/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Popularity](https://img.shields.io/pub/popularity/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Points](https://img.shields.io/pub/points/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
-
-<!-- [![Downloads](https://img.shields.io/github/downloads/insightoptech/cloudbase_ce/total)](https://github.com/insightoptech/cloudbase_ce/) -->
-<!-- [![GitHub Stars](https://img.shields.io/github/stars/insightoptech/cloudbase_ce?style=social)](https://github.com/insightoptech/cloudbase_ce/stargazers) -->
-
 [![GitHub Stars](https://img.shields.io/github/stars/insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/stargazers)
 [![build-test](https://github.com/insightoptech/cloudbase_ce/actions/workflows/ci.yaml/badge.svg)](https://github.com/insightoptech/cloudbase_ce/actions/workflows/ci.yaml)
 [![GitHub License](https://img.shields.io/github/license/insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/blob/main/LICENSE)
 
-## 描述
+# Cloudbase_ce
 
-[腾讯云·云开发](https://www.cloudbase.net/)的 Flutter 插件，更多的云开发 Flutter 插件请见[云开发文档](https://docs.cloudbase.net/api-reference/flutter/install)。
+A **community edition** of TencentCloud CloudBase(TCB) Flutter SDK.
 
-此 package 相比官方版本的升级：
+> Official documents：[API Reference](https://docs.cloudbase.net/api-reference/flutter/install)
 
-- Dart3 兼容
-- 支持空安全
-- 删除过时的 API 调用
-- 升级依赖版本
+| Features                          | cloudbase_ce | Official SDK |
+| --------------------------------- | :----------: | :----------: |
+| **Fully compatible official SDK** |      ✅      |      /       |
+| **Support Null-safety**           |      ✅      |      ❌      |
+| **Fixed bugs**                    |      ✅      |      ❌      |
+| **Support Phone authentication**  |      ✅      |      ❌      |
+| Dart3 Compatibility               |      ✅      |      ❌      |
+| Delete deprecated API calls       |      ✅      |      ❌      |
+| Latest dependencies versions      |      ✅      |      ❌      |
+| Github Actions CI/CD              |      ✅      |      ❌      |
 
-## 平台支持
+## Quick Start
 
-| Platform | Android | iOS |
-| -------- | ------- | --- |
-| Linux    | ✅      | -   |
-| macOS    | ✅      | ✅  |
-| Windows  | ✅      | -   |
+1. Add `cloudbase_ce` to your package's dependencies in pubspec.yaml file:
 
-## 已迁移的包
+```diff
+// pubspec.yaml
 
-| Package            | Version                                                         | Status |
-| ------------------ | --------------------------------------------------------------- | ------ |
-| cloudbase_core     | ![Pub version](https://img.shields.io/pub/v/cloudbase_core)     | ✅     |
-| cloudbase_auth     | ![Pub version](https://img.shields.io/pub/v/cloudbase_auth)     | ✅     |
-| cloudbase_database | ![Pub version](https://img.shields.io/pub/v/cloudbase_database) | ✅     |
-| cloudbase_function | ![Pub version](https://img.shields.io/pub/v/cloudbase_function) | ✅     |
-| cloudbase_storage  | ![Pub version](https://img.shields.io/pub/v/cloudbase_storage)  | ✅     |
+  ...
 
-## 安装
+  dependencies:
+    flutter:
+      sdk: flutter
++   cloudbase_ce: ^2.x.x
 
-在 flutter 项目的 `pubspec.yaml` 文件的 `dependencies` 中添加
+  dev_dependencies:
 
-```yaml
-dependencies:
-  cloudbase_ce:
+  ...
 ```
 
-## 简单示例
+2. Import the package in your dart file:
 
 ```dart
-import 'package:cloudbase_ce/cloudbase_ce.dart';
-
-// 初始化 CloudBase
-CloudBaseCore core = CloudBaseCore.init({
-    // 填写你的云开发 env
-    'env': 'your-env-id'
-});
+ import 'package:cloudbase_ce/cloudbase_ce.dart';
 ```
 
-## 详细文档
+3. Initialize CloudBase:
 
-[云开发·初始化](https://docs.cloudbase.net/api-reference/flutter/initialization)
+```dart
+void main() async {
+  CloudBaseCore core = CloudBaseCore.init({
+    'env': 'your-env-id',
+    'appAccess': {
+      'key': 'your-app-access-key',
+      'version': 'your-app-access-version'
+    },
+    'timeout': 3000 // Optional
+  });
+}
+```
+
+## Migrated packages
+
+| Package            | Version                                                         | Status |
+| ------------------ | --------------------------------------------------------------- | :----: |
+| cloudbase_core     | ![Pub version](https://img.shields.io/pub/v/cloudbase_core)     |   ✅   |
+| cloudbase_auth     | ![Pub version](https://img.shields.io/pub/v/cloudbase_auth)     |   ✅   |
+| cloudbase_database | ![Pub version](https://img.shields.io/pub/v/cloudbase_database) |   ✅   |
+| cloudbase_function | ![Pub version](https://img.shields.io/pub/v/cloudbase_function) |   ✅   |
+| cloudbase_storage  | ![Pub version](https://img.shields.io/pub/v/cloudbase_storage)  |   ✅   |
 
 ## CI/CD
 
-- [x] 自动化编译测试
-- [ ] 自动化发布到 pub.dev
-- [x] 自动化升级依赖版本(pub, github-actions)
-- [x] 自动化质量控制
+- [x] Automatically build & test
+- [x] Automatically upgrade dependencies(pub, github-actions)
+- [x] Automatically quality control
+- [ ] Automatically publish to `pub.dev`
 
-## 贡献者
+## Contributors
 
 [![GitHub contributors](https://contrib.rocks/image?repo=insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/graphs/contributors)
