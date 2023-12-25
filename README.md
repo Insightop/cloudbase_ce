@@ -1,15 +1,3 @@
-<p align="center">
-  <a href="https://cloudbase.net/">
-    <img src="https://docs.cloudbase.net/img/logo.png" alt="cloudbase" style="max-width: 70px; max-height: 70px; vertical-align:bottom; margin:4px;">
-  </a>
-  <a href="https://flutter.dev/">
-    <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-ar21.svg" alt="flutter" style="vertical-align:bottom; margin:4px;">
-  </a>
-  <a href="https://dart.dev/">
-    <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-ar21.svg" alt="dart" style="vertical-align:bottom; margin:4px;">
-  </a>
-</p>
-
 [![Pub Version](https://img.shields.io/pub/v/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Popularity](https://img.shields.io/pub/popularity/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Points](https://img.shields.io/pub/points/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
@@ -19,20 +7,20 @@
 
 # Cloudbase_ce
 
-A **community edition** of TencentCloud CloudBase(TCB) Flutter SDK.
+A `community edition` of TencentCloud CloudBase(TCB) Flutter SDK.
 
 > Official documents：[API Reference](https://docs.cloudbase.net/api-reference/flutter/install)
 
-| Features                          | cloudbase_ce | Official SDK |
+| Features                          | Official SDK | cloudbase_ce |
 | --------------------------------- | :----------: | :----------: |
-| **Fully compatible official SDK** |      ✅      |      /       |
-| **Support Null-safety**           |      ✅      |      ❌      |
-| **Fixed bugs**                    |      ✅      |      ❌      |
-| **Support Phone authentication**  |      ✅      |      ❌      |
-| Dart3 Compatibility               |      ✅      |      ❌      |
-| Delete deprecated API calls       |      ✅      |      ❌      |
-| Latest dependencies versions      |      ✅      |      ❌      |
-| Github Actions CI/CD              |      ✅      |      ❌      |
+| **Fully compatible official SDK** |      🚫      |      ✅      |
+| **Support Null-safety**           |      ❌      |      ✅      |
+| **Fixed bugs**                    |      ❌      |      ✅      |
+| **Support Phone authentication**  |      ❌      |      🔜      |
+| Dart3 Compatibility               |      ❌      |      ✅      |
+| Delete deprecated API calls       |      ❌      |      ✅      |
+| Latest dependencies versions      |      ❌      |      ✅      |
+| Github Actions CI/CD              |      ❌      |      ✅      |
 
 ## Quick Start
 
@@ -64,12 +52,12 @@ A **community edition** of TencentCloud CloudBase(TCB) Flutter SDK.
 ```dart
 void main() async {
   CloudBaseCore core = CloudBaseCore.init({
-    'env': 'your-env-id',
+    'env': 'your-env-id', // Replace with your own envID
     'appAccess': {
-      'key': 'your-app-access-key',
-      'version': 'your-app-access-version'
+      'key': 'your-app-access-key', // Replace with your own appAccessKey
+      'version': 'your-app-access-version' // Replace with your own appAccessVersion
     },
-    'timeout': 3000 // Optional
+    'timeout': 3000 // Optional, request timeout in milliseconds
   });
 }
 ```
