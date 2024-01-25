@@ -12,6 +12,9 @@ enum CloudBaseAuthType {
   /// 自定义登录
   CUSTOM,
 
+  /// 短信登录
+  PHONECODE,
+
   /// 匿名登录
   ANONYMOUS
 }

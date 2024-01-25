@@ -4,10 +4,13 @@
 import 'dart:async';
 import 'package:cloudbase_ce/cloudbase_ce.dart';
 
+enum SIGN_METHOD { SIGNIN, SIGNUP, FORCERESETPWD }
+
 class CloudBaseAuth extends AuthProvider {
   WxAuthProvider? _wxAuthProvider;
   CustomAuthProvider? _customAuthProvider;
   AnonymousAuthProvider? _anonymousAuthProvider;
+  PhoneCodeAuthProvider? _phoneCodeAuthProvider;
 
   CloudBaseAuth._internal(CloudBaseCore core) : super(core) {
     super.core.setAuthInstance(this);
@@ -23,6 +26,55 @@ class CloudBaseAuth extends AuthProvider {
     return _cache.putIfAbsent(envId, () {
       return CloudBaseAuth._internal(core);
     });
+  }
+
+  /// 发送SMS
+  Future<bool> sendPhoneCode(String phoneNumber) async {
+    if (_phoneCodeAuthProvider == null) {
+      _phoneCodeAuthProvider = PhoneCodeAuthProvider(super.core);
+    }
+
+    return await _phoneCodeAuthProvider!
+        .sendPhoneCode(phoneNumber: phoneNumber);
+  }
+
+  // 使用手机号和接受到的验证码短信登录
+  Future<CloudBaseAuthState> signInWithPhoneCode(
+      {required String phoneNumber,
+      String? phoneCode,
+      String? password}) async {
+    if (_phoneCodeAuthProvider == null) {
+      _phoneCodeAuthProvider = PhoneCodeAuthProvider(super.core);
+    }
+
+    CloudBaseAuthState authState =
+        await _phoneCodeAuthProvider!.signInWithPhoneCode(
+      phoneNumber: phoneNumber,
+      phoneCode: phoneCode,
+      password: password,
+      signMethod: SIGN_METHOD.SIGNIN.name,
+    );
+
+    return authState;
+  }
+
+  // 使用手机号和接受到的验证码短信注册
+  Future<CloudBaseAuthState> signUpWithPhoneCode(
+      {required String phoneNumber,
+      String? phoneCode,
+      String? password}) async {
+    if (_phoneCodeAuthProvider == null) {
+      _phoneCodeAuthProvider = PhoneCodeAuthProvider(super.core);
+    }
+
+    CloudBaseAuthState authState = await _phoneCodeAuthProvider!
+        .signUpWithPhoneCode(
+            phoneNumber: phoneNumber,
+            phoneCode: phoneCode,
+            password: password,
+            signMethod: SIGN_METHOD.SIGNUP.name);
+
+    return authState;
   }
 
   /// 微信登录
@@ -88,7 +140,6 @@ class CloudBaseAuth extends AuthProvider {
     if (res.code != null) {
       throw CloudBaseException(code: res.code, message: res.message);
     }
-
     await cache.removeAllStore();
   }
 

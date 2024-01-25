@@ -7,3 +7,4 @@ export 'customAuth.dart';
 export 'index.dart';
 export 'interface.dart';
 export 'wxAuth.dart';
+export 'phoneAuth.dart';
