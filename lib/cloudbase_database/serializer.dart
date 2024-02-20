@@ -69,11 +69,11 @@ class Serializer {
         case 'GeoPolygon':
         case 'GeoMultiPoint':
         case 'GeoMultiLineString':
+        case 'ServerDate':
+          // docs.add(DateTime.fromMicrosecondsSinceEpoch(item['\$date'] * 1000));
+          // break;
         case 'GeoMultiPolygon':
           docs.add(_formatGeoField(type, item));
-          break;
-        case 'ServerDate':
-          docs.add(DateTime.fromMicrosecondsSinceEpoch(item['\$date'] * 1000));
           break;
 
         default:
@@ -103,12 +103,12 @@ class Serializer {
         case 'GeoPolygon':
         case 'GeoMultiPoint':
         case 'GeoMultiLineString':
+        case 'ServerDate':
+          // docs[key] =
+              // (DateTime.fromMicrosecondsSinceEpoch(value['\$date'] * 1000));
+          // break;
         case 'GeoMultiPolygon':
           docs[key] = _formatGeoField(type, value);
-          break;
-        case 'ServerDate':
-          docs[key] =
-              (DateTime.fromMicrosecondsSinceEpoch(value['\$date'] * 1000));
           break;
         default:
           docs[key] = value;
