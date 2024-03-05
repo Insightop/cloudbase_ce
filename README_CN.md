@@ -7,26 +7,26 @@
 
 # Cloudbase_ce
 
-[中文](README_CN.md)
+[English](README.md)
 
-A `community edition` of TencentCloud CloudBase(TCB) Flutter SDK.
+腾讯云 CloudBase(TCB) Flutter SDK 的 `社区版`。
 
-> Official documents：[API Reference](https://docs.cloudbase.net/api-reference/flutter/install)
+> 官方文档：[API 参考](https://docs.cloudbase.net/api-reference/flutter/install)
 
-| Features                          | Official SDK | cloudbase_ce |
-| --------------------------------- | :----------: | :----------: |
-| **Fully compatible official SDK** |      🚫      |      ✅      |
-| **Support Null-safety**           |      ❌      |      ✅      |
-| **Fixed bugs**                    |      ❌      |      ✅      |
-| **Support Phone authentication**  |      ❌      |      🔜      |
-| Dart3 Compatibility               |      ❌      |      ✅      |
-| Delete deprecated API calls       |      ❌      |      ✅      |
-| Latest dependencies versions      |      ❌      |      ✅      |
-| GitHub Actions CI/CD              |      ❌      |      ✅      |
+| 特性                 | 官方 SDK | cloudbase_ce |
+| -------------------- | :------: | :----------: |
+| **完全兼容官方 SDK** |    🚫    |      ✅      |
+| **支持空安全**       |    ❌    |      ✅      |
+| **修复 Bug**         |    ❌    |      ✅      |
+| **支持手机号认证**   |    ❌    |      🔜      |
+| Dart3 兼容           |    ❌    |      ✅      |
+| 删除过时的 API 调用  |    ❌    |      ✅      |
+| 最新的依赖版本       |    ❌    |      ✅      |
+| GitHub Actions CI/CD |    ❌    |      ✅      |
 
-## Quick Start
+## 快速开始
 
-1. Add `cloudbase_ce` to your package's dependencies in `pubspec.yaml` file:
+1. 添加`cloudbase_ce`依赖到工程中的 `pubspec.yaml`文件：
 
 ```diff
 // pubspec.yaml
@@ -43,28 +43,28 @@ A `community edition` of TencentCloud CloudBase(TCB) Flutter SDK.
   ...
 ```
 
-2. Import the package in your dart file:
+2. 在 Dart 代码中引入 `cloudbase_ce`：
 
 ```dart
  import 'package:cloudbase_ce/cloudbase_ce.dart';
 ```
 
-3. Initialize CloudBase:
+3. 初始化 CloudBase：
 
 ```dart
 void main() async {
   CloudBaseCore core = CloudBaseCore.init({
-    'env': 'your-env-id', // Replace with your own envID
+    'env': 'your-env-id', // 替换为你的云开发环境ID
     'appAccess': {
-      'key': 'your-app-access-key', // Replace with your own appAccessKey
-      'version': 'your-app-access-version' // Replace with your own appAccessVersion
+      'key': 'your-app-access-key', // 替换为你的appAccessKey
+      'version': 'your-app-access-version' // 替换为你的appAccessVersion
     },
-    'timeout': 3000 // Optional, request timeout in milliseconds
+    'timeout': 3000 // 可选，请求超时时间
   });
 }
 ```
 
-## Migrated packages
+## 移植的包
 
 | Package            | Version                                                         | Status |
 | ------------------ | --------------------------------------------------------------- | :----: |
@@ -76,11 +76,11 @@ void main() async {
 
 ## CI/CD
 
-- [x] Automatically build & test
-- [x] Automatically upgrade dependencies(pub, github-actions)
-- [x] Automatically quality control
-- [ ] Automatically publish to `pub.dev`
+- [x] 自动化编译&测试
+- [x] 自动化升级依赖版本(pub, github-actions)
+- [x] 自动化质量控制
+- [ ] 自动化发布到 `pub.dev`
 
-## Contributors
+## 贡献者们
 
 [![GitHub contributors](https://contrib.rocks/image?repo=insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/graphs/contributors)
