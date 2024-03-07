@@ -107,7 +107,7 @@ class _MyAppState extends State<MyApp> {
       'env': '你的腾讯云环境ID',
       'appAccess': {
         /// 访问 https://console.cloud.tencent.com/tcb/env/safety
-        /// 点击【添加应用】, 需要添加当前的测试包名(应用标识)【com.example.example】
+        /// 点击【添加应用】, 需要添加当前的测试包名(应用标识)【com.example.cloudbase_example】
         /// 创建完成后可以看到一条记录，点击数据行末尾【操作】栏的【获取凭证】, 然后点击【复制】
         /// 然后粘贴到下面的 `key` 字段
         'key': '你的腾讯云应用标识key',
