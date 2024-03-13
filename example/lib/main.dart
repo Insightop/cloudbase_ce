@@ -22,6 +22,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformTest = 'Unknown';
+  Uint8List? _qrCode;
+  String _scanStatus = '未扫描';
+  String _finishStatus = '未完成';
+  String _authCode = '';
   @override
   void initState() {
     super.initState();
@@ -85,10 +89,19 @@ class _MyAppState extends State<MyApp> {
               /// 创建完成后，如链接图所示：https://s4.ax1x.com/2022/02/22/bSPSYR.png
               TextButton(
                   onPressed: () async {
-                    final CloudBaseCore core = await loginCloud();
-                    await goTest(core);
+                    // final CloudBaseCore core = await loginCloud();
+                    // await goTest(core);
+
+                    final CloudBaseCore core = await qrScan();
                   },
                   child: Text('Run TEST')),
+              Container(
+                child: _qrCode == null
+                    ? Text('No QR code yet')
+                    : Image.memory(_qrCode!, width: 200, height: 200),
+              ),
+              Text(_scanStatus),
+              Text(_finishStatus),
               Text(
                 _platformTest,
                 style: Theme.of(context).textTheme.headlineSmall,
@@ -98,6 +111,47 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
+  }
+
+  /// 二维码扫码登录
+  Future<CloudBaseCore> qrScan() async {
+    CloudBaseCore core = CloudBaseCore.init({
+      'env': 'evnid',
+      'appAccess': {'key': 'appaccesskey', 'version': '1'}
+    });
+
+    //core.setAuthInstance(TestAuth());
+    CloudBaseAuth auth = CloudBaseAuth(core);
+    CloudBaseAuthState? authState = await auth.getAuthState();
+    // 获取二维码
+    auth
+        .getQrCode(
+            wxAppId: 'appid',
+            wxAppSecret: 'appsecret',
+            wxUniLink: 'https://example.com/example/')
+        .then((value) {
+      setState(() {
+        _qrCode = value;
+      });
+    });
+    // 等待扫码
+    auth.waitForQrCodeScanned().then((value) {
+      setState(() {
+        _scanStatus = '扫描成功';
+      });
+    });
+    // 等待完成
+    auth.waitForQrCodeFinished().then((value) {
+      setState(() {
+        _finishStatus = '完成';
+        _authCode = value;
+      });
+    });
+
+    authState =
+        await auth.signInByAuthCode(wxAppId: 'appid', authCode: _authCode);
+    // debugPrint('authState: ${authState.authType}');
+    return core;
   }
 
   Future<CloudBaseCore> loginCloud() async {

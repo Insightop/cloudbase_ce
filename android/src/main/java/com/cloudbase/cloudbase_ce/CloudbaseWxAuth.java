@@ -9,12 +9,21 @@ import androidx.annotation.NonNull;
 
 import io.flutter.plugin.common.MethodChannel.Result;
 
+// https://javadoc.io/doc/com.tencent.mm.opensdk/wechat-sdk-android/latest/index.html
+
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
+
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+// import com.tencent.mm.opensdk.openapi.SendReqCallback;
+
+import com.tencent.mm.opensdk.diffdev.IDiffDevOAuth;
+import com.tencent.mm.opensdk.diffdev.OAuthListener;
+import com.tencent.mm.opensdk.diffdev.DiffDevOAuthFactory;
+import com.tencent.mm.opensdk.diffdev.OAuthErrCode;
 
 import java.lang.ref.WeakReference;
 
@@ -24,7 +33,15 @@ public class CloudbaseWxAuth implements IWXAPIEventHandler, ActivityLifecycleCal
   private IWXAPI wxApi;
   private Result flutterCallback = null;
   private WeakReference<Activity> wxEntryHandler = null;
+  // 二维码登录
+  private final IDiffDevOAuth qrauth = DiffDevOAuthFactory.getDiffDevOAuth();
 
+  @Override
+  public void onDetachedFromActivity() {
+      qrauth.removeAllListeners();
+      activityPluginBinding = null;
+  }
+  
   private CloudbaseWxAuth(String wxAppId) throws Exception {
     this.wxAppId = wxAppId;
 
@@ -64,6 +81,7 @@ public class CloudbaseWxAuth implements IWXAPIEventHandler, ActivityLifecycleCal
     }
 
     if (!wxApi.isWXAppInstalled()) {
+      //TODO 如果未安装微信，则应该使用二维码登录
       result.error("WX_AUTH_NO_INSTALLED", "WX_AUTH_NO_INSTALLED", null);
       return;
     }

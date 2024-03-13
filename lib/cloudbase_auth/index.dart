@@ -3,9 +3,11 @@
 
 import 'dart:async';
 import 'package:cloudbase_ce/cloudbase_ce.dart';
+import 'package:flutter/foundation.dart';
 
 class CloudBaseAuth extends AuthProvider {
   WxAuthProvider? _wxAuthProvider;
+  QrAuthProvider? _qrAuthProvider;
   CustomAuthProvider? _customAuthProvider;
   AnonymousAuthProvider? _anonymousAuthProvider;
 
@@ -35,6 +37,46 @@ class CloudBaseAuth extends AuthProvider {
     CloudBaseAuthState authState =
         await _wxAuthProvider!.signInByWx(wxAppId, wxUniLink);
 
+    return authState;
+  }
+
+  /// 获取微信二维码
+  Future<Uint8List?> getQrCode(
+      {required String wxAppId,
+      required String wxAppSecret,
+      required String wxUniLink}) async {
+    if (_qrAuthProvider == null) {
+      _qrAuthProvider = QrAuthProvider(super.core);
+    }
+
+    // 申请二维码
+    await _qrAuthProvider!.reqQrCode(wxAppId, wxAppSecret, wxUniLink);
+
+    // 等获取到二维码
+    var res = await _qrAuthProvider!.getGotQrCompleter();
+
+    return res.imageData;
+  }
+
+  // 等待扫码
+  Future waitForQrCodeScanned() async {
+    var res = await _qrAuthProvider!.getScanQrCompleter();
+
+    return res;
+  }
+
+  // 等待扫码
+  Future waitForQrCodeFinished() async {
+    var res = await _qrAuthProvider!.getFinishQrCompleter();
+
+    return res;
+  }
+
+  /// 通过微信扫码获得的授权码登录
+  Future<CloudBaseAuthState> signInByAuthCode(
+      {required String wxAppId, required String authCode}) async {
+    CloudBaseAuthState authState =
+        await _qrAuthProvider!.signInByAuthCode(wxAppId, authCode);
     return authState;
   }
 
