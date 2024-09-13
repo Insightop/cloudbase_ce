@@ -1,9 +1,9 @@
 [![Pub Version](https://img.shields.io/pub/v/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Popularity](https://img.shields.io/pub/popularity/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
 [![Pub Points](https://img.shields.io/pub/points/cloudbase_ce)](https://pub.dev/packages/cloudbase_ce)
-[![GitHub Stars](https://img.shields.io/github/stars/insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/stargazers)
-[![build-test](https://github.com/insightoptech/cloudbase_ce/actions/workflows/ci.yaml/badge.svg)](https://github.com/insightoptech/cloudbase_ce/actions/workflows/ci.yaml)
-[![GitHub License](https://img.shields.io/github/license/insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/insightop/cloudbase_ce)](https://github.com/insightop/cloudbase_ce/stargazers)
+[![build-test](https://github.com/insightop/cloudbase_ce/actions/workflows/ci.yaml/badge.svg)](https://github.com/insightop/cloudbase_ce/actions/workflows/ci.yaml)
+[![GitHub License](https://img.shields.io/github/license/insightop/cloudbase_ce)](https://github.com/insightop/cloudbase_ce/blob/main/LICENSE)
 
 # Cloudbase_ce
 
@@ -83,4 +83,4 @@ void main() async {
 
 ## Contributors
 
-[![GitHub contributors](https://contrib.rocks/image?repo=insightoptech/cloudbase_ce)](https://github.com/insightoptech/cloudbase_ce/graphs/contributors)
+[![GitHub contributors](https://contrib.rocks/image?repo=insightop/cloudbase_ce)](https://github.com/insightop/cloudbase_ce/graphs/contributors)
