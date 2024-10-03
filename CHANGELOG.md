@@ -1,3 +1,7 @@
+## 2.1.4
+
+- Fix dependencies version error
+
 ## 2.1.3
 
 - Bump dependencies and update README
