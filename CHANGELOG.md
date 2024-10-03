@@ -1,3 +1,7 @@
+## 2.1.3
+
+- Bump dependencies and update README
+
 ## 2.1.2
 
 - Update README

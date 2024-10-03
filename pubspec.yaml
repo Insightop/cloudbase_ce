@@ -1,6 +1,6 @@
 name: cloudbase_ce
 description: Cloudbase SDK community edition. All APIs are consistent to the official with null-safety.
-version: 2.1.2
+version: 2.1.3
 homepage: https://github.com/insightop/cloudbase_ce
 
 environment:
@@ -13,7 +13,7 @@ dependencies:
   dio: ^5.3.4
   shared_preferences: ^2.2.2
   crypto: ^3.0.3
-  package_info_plus: ">=4.0.0 <9.0.0"
+  package_info_plus: ^8.0.0
 
 dev_dependencies:
   flutter_test:
